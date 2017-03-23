@@ -5,7 +5,7 @@
   border-color: $border;
   color: $text-color;
 
-  hr {
+  .#{$class-prefix}-tag-hr {
     border-top-color: darken($border, 5%);
   }
   .#{$class-prefix}-alert-link {

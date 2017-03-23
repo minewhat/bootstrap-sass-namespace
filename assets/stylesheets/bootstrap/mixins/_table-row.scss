@@ -3,25 +3,25 @@
 @mixin table-row-variant($state, $background) {
   // Exact selectors below required to override `.table-striped` and prevent
   // inheritance to nested tables.
-  .#{$class-prefix}-table > thead > tr,
-  .#{$class-prefix}-table > tbody > tr,
-  .#{$class-prefix}-table > tfoot > tr {
-    > td.#{$state},
-    > th.#{$state},
-    &.#{$state} > td,
-    &.#{$state} > th {
+  .#{$class-prefix}-table > .#{$class-prefix}-tag-thead > .#{$class-prefix}-tag-tr,
+  .#{$class-prefix}-table > .#{$class-prefix}-tag-tbody > .#{$class-prefix}-tag-tr,
+  .#{$class-prefix}-table > .#{$class-prefix}-tag-tfoot > .#{$class-prefix}-tag-tr {
+    > .#{$class-prefix}-tag-td.#{$state},
+    > .#{$class-prefix}-tag-th.#{$state},
+    &.#{$state} > .#{$class-prefix}-tag-td,
+    &.#{$state} > .#{$class-prefix}-tag-th {
       background-color: $background;
     }
   }
 
   // Hover states for `.table-hover`
   // Note: this is not available for cells or rows within `thead` or `tfoot`.
-  .#{$class-prefix}-table-hover > tbody > tr {
-    > td.#{$state}:hover,
-    > th.#{$state}:hover,
-    &.#{$state}:hover > td,
+  .#{$class-prefix}-table-hover > .#{$class-prefix}-tag-tbody > .#{$class-prefix}-tag-tr {
+    > .#{$class-prefix}-tag-td.#{$state}:hover,
+    > .#{$class-prefix}-tag-th.#{$state}:hover,
+    &.#{$state}:hover > .#{$class-prefix}-tag-td,
     &:hover > .#{$state},
-    &.#{$state}:hover > th {
+    &.#{$state}:hover > .#{$class-prefix}-tag-th {
       background-color: darken($background, 5%);
     }
   }

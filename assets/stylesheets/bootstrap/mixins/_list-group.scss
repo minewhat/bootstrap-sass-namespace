@@ -8,8 +8,8 @@
     // [converter] extracted a&, button& to a.list-group-item-#{$state}, button.list-group-item-#{$state}
   }
 
-  a.#{$class-prefix}-list-group-item-#{$state},
-  button.#{$class-prefix}-list-group-item-#{$state} {
+  .#{$class-prefix}-tag-a.#{$class-prefix}-list-group-item-#{$state},
+  .#{$class-prefix}-tag-button.#{$class-prefix}-list-group-item-#{$state} {
     color: $color;
 
     .#{$class-prefix}-list-group-item-heading {

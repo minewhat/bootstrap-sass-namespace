@@ -172,7 +172,7 @@
     text-decoration: none;
   }
 
-  > img {
+  > .#{$class-prefix}-tag-img {
     display: block;
   }
 
@@ -232,7 +232,7 @@
 .#{$class-prefix}-navbar-nav {
   margin: ($navbar-padding-vertical / 2) (-$navbar-padding-horizontal);
 
-  > li > a {
+  > .#{$class-prefix}-tag-li > .#{$class-prefix}-tag-a {
     padding-top:    10px;
     padding-bottom: 10px;
     line-height: $line-height-computed;
@@ -248,11 +248,11 @@
       background-color: transparent;
       border: 0;
       box-shadow: none;
-      > li > a,
+      > .#{$class-prefix}-tag-li > .#{$class-prefix}-tag-a,
       .#{$class-prefix}-dropdown-header {
         padding: 5px 15px 5px 25px;
       }
-      > li > a {
+      > .#{$class-prefix}-tag-li > .#{$class-prefix}-tag-a {
         line-height: $line-height-computed;
         &:hover,
         &:focus {
@@ -267,9 +267,9 @@
     float: left;
     margin: 0;
 
-    > li {
+    > .#{$class-prefix}-tag-li {
       float: left;
-      > a {
+      > .#{$class-prefix}-tag-a {
         padding-top:    $navbar-padding-vertical;
         padding-bottom: $navbar-padding-vertical;
       }
@@ -324,12 +324,12 @@
 // Dropdown menus
 
 // Menu position and menu carets
-.#{$class-prefix}-navbar-nav > li > .#{$class-prefix}-dropdown-menu {
+.#{$class-prefix}-navbar-nav > .#{$class-prefix}-tag-li > .#{$class-prefix}-dropdown-menu {
   margin-top: 0;
   @include border-top-radius(0);
 }
 // Menu position and menu caret support for dropups via extra dropup class
-.#{$class-prefix}-navbar-fixed-bottom .#{$class-prefix}-navbar-nav > li > .#{$class-prefix}-dropdown-menu {
+.#{$class-prefix}-navbar-fixed-bottom .#{$class-prefix}-navbar-nav > .#{$class-prefix}-tag-li > .#{$class-prefix}-dropdown-menu {
   margin-bottom: 0;
   @include border-top-radius($navbar-border-radius);
   @include border-bottom-radius(0);
@@ -412,7 +412,7 @@
   }
 
   .#{$class-prefix}-navbar-nav {
-    > li > a {
+    > .#{$class-prefix}-tag-li > .#{$class-prefix}-tag-a {
       color: $navbar-default-link-color;
 
       &:hover,
@@ -421,7 +421,7 @@
         background-color: $navbar-default-link-hover-bg;
       }
     }
-    > .#{$class-prefix}-active > a {
+    > .#{$class-prefix}-active > .#{$class-prefix}-tag-a {
       &,
       &:hover,
       &:focus {
@@ -429,7 +429,7 @@
         background-color: $navbar-default-link-active-bg;
       }
     }
-    > .#{$class-prefix}-disabled > a {
+    > .#{$class-prefix}-disabled > .#{$class-prefix}-tag-a {
       &,
       &:hover,
       &:focus {
@@ -458,7 +458,7 @@
   // Dropdown menu items
   .#{$class-prefix}-navbar-nav {
     // Remove background color from open dropdown
-    > .#{$class-prefix}-open > a {
+    > .#{$class-prefix}-open > .#{$class-prefix}-tag-a {
       &,
       &:hover,
       &:focus {
@@ -470,7 +470,7 @@
     @media (max-width: $grid-float-breakpoint-max) {
       // Dropdowns get custom display when collapsed
       .#{$class-prefix}-open .#{$class-prefix}-dropdown-menu {
-        > li > a {
+        > .#{$class-prefix}-tag-li > .#{$class-prefix}-tag-a {
           color: $navbar-default-link-color;
           &:hover,
           &:focus {
@@ -478,7 +478,7 @@
             background-color: $navbar-default-link-hover-bg;
           }
         }
-        > .#{$class-prefix}-active > a {
+        > .#{$class-prefix}-active > .#{$class-prefix}-tag-a {
           &,
           &:hover,
           &:focus {
@@ -486,7 +486,7 @@
             background-color: $navbar-default-link-active-bg;
           }
         }
-        > .#{$class-prefix}-disabled > a {
+        > .#{$class-prefix}-disabled > .#{$class-prefix}-tag-a {
           &,
           &:hover,
           &:focus {
@@ -517,7 +517,7 @@
       color: $navbar-default-link-hover-color;
     }
     &[disabled],
-    fieldset[disabled] & {
+    .#{$class-prefix}-tag-fieldset[disabled] & {
       &:hover,
       &:focus {
         color: $navbar-default-link-disabled-color;
@@ -546,7 +546,7 @@
   }
 
   .#{$class-prefix}-navbar-nav {
-    > li > a {
+    > .#{$class-prefix}-tag-li > .#{$class-prefix}-tag-a {
       color: $navbar-inverse-link-color;
 
       &:hover,
@@ -555,7 +555,7 @@
         background-color: $navbar-inverse-link-hover-bg;
       }
     }
-    > .#{$class-prefix}-active > a {
+    > .#{$class-prefix}-active > .#{$class-prefix}-tag-a {
       &,
       &:hover,
       &:focus {
@@ -563,7 +563,7 @@
         background-color: $navbar-inverse-link-active-bg;
       }
     }
-    > .#{$class-prefix}-disabled > a {
+    > .#{$class-prefix}-disabled > .#{$class-prefix}-tag-a {
       &,
       &:hover,
       &:focus {
@@ -592,7 +592,7 @@
 
   // Dropdowns
   .#{$class-prefix}-navbar-nav {
-    > .#{$class-prefix}-open > a {
+    > .#{$class-prefix}-open > .#{$class-prefix}-tag-a {
       &,
       &:hover,
       &:focus {
@@ -610,7 +610,7 @@
         .#{$class-prefix}-divider {
           background-color: $navbar-inverse-border;
         }
-        > li > a {
+        > .#{$class-prefix}-tag-li > .#{$class-prefix}-tag-a {
           color: $navbar-inverse-link-color;
           &:hover,
           &:focus {
@@ -618,7 +618,7 @@
             background-color: $navbar-inverse-link-hover-bg;
           }
         }
-        > .#{$class-prefix}-active > a {
+        > .#{$class-prefix}-active > .#{$class-prefix}-tag-a {
           &,
           &:hover,
           &:focus {
@@ -626,7 +626,7 @@
             background-color: $navbar-inverse-link-active-bg;
           }
         }
-        > .#{$class-prefix}-disabled > a {
+        > .#{$class-prefix}-disabled > .#{$class-prefix}-tag-a {
           &,
           &:hover,
           &:focus {
@@ -652,7 +652,7 @@
       color: $navbar-inverse-link-hover-color;
     }
     &[disabled],
-    fieldset[disabled] & {
+    .#{$class-prefix}-tag-fieldset[disabled] & {
       &:hover,
       &:focus {
         color: $navbar-inverse-link-disabled-color;

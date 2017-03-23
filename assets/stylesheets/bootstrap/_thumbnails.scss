@@ -14,8 +14,8 @@
   border-radius: $thumbnail-border-radius;
   @include transition(border .2s ease-in-out);
 
-  > img,
-  a > img {
+  > .#{$class-prefix}-tag-img,
+  .#{$class-prefix}-tag-a > .#{$class-prefix}-tag-img {
     @include img-responsive;
     margin-left: auto;
     margin-right: auto;
@@ -31,8 +31,8 @@
 }
 
 // Add a hover state for linked versions only
-a.#{$class-prefix}-thumbnail:hover,
-a.#{$class-prefix}-thumbnail:focus,
-a.#{$class-prefix}-thumbnail.#{$class-prefix}-active {
+.#{$class-prefix}-tag-a.#{$class-prefix}-thumbnail:hover,
+.#{$class-prefix}-tag-a.#{$class-prefix}-thumbnail:focus,
+.#{$class-prefix}-tag-a.#{$class-prefix}-thumbnail.#{$class-prefix}-active {
   border-color: $link-color;
 }

@@ -43,8 +43,8 @@
 // Use anchor or button elements instead of `li`s or `div`s to create interactive items.
 // Includes an extra `.active` modifier class for showing selected items.
 
-a.#{$class-prefix}-list-group-item,
-button.#{$class-prefix}-list-group-item {
+.#{$class-prefix}-tag-a.#{$class-prefix}-list-group-item,
+.#{$class-prefix}-tag-button.#{$class-prefix}-list-group-item {
   color: $list-group-link-color;
 
   .#{$class-prefix}-list-group-item-heading {
@@ -60,7 +60,7 @@ button.#{$class-prefix}-list-group-item {
   }
 }
 
-button.#{$class-prefix}-list-group-item {
+.#{$class-prefix}-tag-button.#{$class-prefix}-list-group-item {
   width: 100%;
   text-align: left;
 }
@@ -94,7 +94,7 @@ button.#{$class-prefix}-list-group-item {
 
     // Force color to inherit for custom content
     .#{$class-prefix}-list-group-item-heading,
-    .#{$class-prefix}-list-group-item-heading > small,
+    .#{$class-prefix}-list-group-item-heading > .#{$class-prefix}-tag-small,
     .#{$class-prefix}-list-group-item-heading > .#{$class-prefix}-small {
       color: inherit;
     }

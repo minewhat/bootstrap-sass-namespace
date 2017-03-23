@@ -10,10 +10,10 @@
   overflow: hidden;
 
   .#{$class-prefix}-embed-responsive-item,
-  iframe,
-  embed,
-  object,
-  video {
+  .#{$class-prefix}-tag-iframe,
+  .#{$class-prefix}-tag-embed,
+  .#{$class-prefix}-tag-object,
+  .#{$class-prefix}-tag-video {
     position: absolute;
     top: 0;
     left: 0;

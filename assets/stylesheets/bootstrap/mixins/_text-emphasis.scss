@@ -5,8 +5,8 @@
   #{$parent} {
     color: $color;
   }
-  a#{$parent}:hover,
-  a#{$parent}:focus {
+  .#{$class-prefix}-tag-a#{$parent}:hover,
+  .#{$class-prefix}-tag-a#{$parent}:focus {
     color: darken($color, 10%);
   }
 }

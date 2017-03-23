@@ -13,7 +13,7 @@
   border-radius: $alert-border-radius;
 
   // Headings for larger alerts
-  h4 {
+  .#{$class-prefix}-tag-h4 {
     margin-top: 0;
     // Specified for the h4 to prevent conflicts of changing $headings-color
     color: inherit;
@@ -25,12 +25,12 @@
   }
 
   // Improve alignment and spacing of inner content
-  > p,
-  > ul {
+  > .#{$class-prefix}-tag-p,
+  > .#{$class-prefix}-tag-ul {
     margin-bottom: 0;
   }
 
-  > p + p {
+  > .#{$class-prefix}-tag-p + .#{$class-prefix}-tag-p {
     margin-top: 5px;
   }
 }

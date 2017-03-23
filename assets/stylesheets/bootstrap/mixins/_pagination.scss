@@ -1,22 +1,22 @@
 // Pagination
 
 @mixin pagination-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-  > li {
-    > a,
-    > span {
+  > .#{$class-prefix}-tag-li {
+    > .#{$class-prefix}-tag-a,
+    > .#{$class-prefix}-tag-span {
       padding: $padding-vertical $padding-horizontal;
       font-size: $font-size;
       line-height: $line-height;
     }
     &:first-child {
-      > a,
-      > span {
+      > .#{$class-prefix}-tag-a,
+      > .#{$class-prefix}-tag-span {
         @include border-left-radius($border-radius);
       }
     }
     &:last-child {
-      > a,
-      > span {
+      > .#{$class-prefix}-tag-a,
+      > .#{$class-prefix}-tag-span {
         @include border-right-radius($border-radius);
       }
     }

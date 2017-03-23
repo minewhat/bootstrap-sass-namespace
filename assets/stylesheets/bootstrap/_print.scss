@@ -15,54 +15,54 @@
         text-shadow: none !important;
     }
 
-    a,
-    a:visited {
+    .#{$class-prefix}-tag-a,
+    .#{$class-prefix}-tag-a:visited {
         text-decoration: underline;
     }
 
-    a[href]:after {
+    .#{$class-prefix}-tag-a[href]:after {
         content: " (" attr(href) ")";
     }
 
-    abbr[title]:after {
+    .#{$class-prefix}-tag-abbr[title]:after {
         content: " (" attr(title) ")";
     }
 
     // Don't show links that are fragment identifiers,
     // or use the `javascript:` pseudo protocol
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
+    .#{$class-prefix}-tag-a[href^="#"]:after,
+    .#{$class-prefix}-tag-a[href^="javascript:"]:after {
         content: "";
     }
 
-    pre,
-    blockquote {
+    .#{$class-prefix}-tag-pre,
+    .#{$class-prefix}-tag-blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
 
-    thead {
+    .#{$class-prefix}-tag-thead {
         display: table-header-group; // h5bp.com/t
     }
 
-    tr,
-    img {
+    .#{$class-prefix}-tag-tr,
+    .#{$class-prefix}-tag-img {
         page-break-inside: avoid;
     }
 
-    img {
+    .#{$class-prefix}-tag-img {
         max-width: 100% !important;
     }
 
-    p,
-    h2,
-    h3 {
+    .#{$class-prefix}-tag-p,
+    .#{$class-prefix}-tag-h2,
+    .#{$class-prefix}-tag-h3 {
         orphans: 3;
         widows: 3;
     }
 
-    h2,
-    h3 {
+    .#{$class-prefix}-tag-h2,
+    .#{$class-prefix}-tag-h3 {
         page-break-after: avoid;
     }
 
@@ -85,14 +85,14 @@
     .#{$class-prefix}-table {
         border-collapse: collapse !important;
 
-        td,
-        th {
+        .#{$class-prefix}-tag-td,
+        .#{$class-prefix}-tag-th {
             background-color: #fff !important;
         }
     }
     .#{$class-prefix}-table-bordered {
-        th,
-        td {
+        .#{$class-prefix}-tag-th,
+        .#{$class-prefix}-tag-td {
             border: 1px solid #ddd !important;
         }
     }

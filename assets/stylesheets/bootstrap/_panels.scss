@@ -36,11 +36,11 @@
   font-size: ceil(($font-size-base * 1.125));
   color: inherit;
 
-  > a,
-  > small,
+  > .#{$class-prefix}-tag-a,
+  > .#{$class-prefix}-tag-small,
   > .#{$class-prefix}-small,
-  > small > a,
-  > .#{$class-prefix}-small > a {
+  > .#{$class-prefix}-tag-small > .#{$class-prefix}-tag-a,
+  > .#{$class-prefix}-small > .#{$class-prefix}-tag-a {
     color: inherit;
   }
 }
@@ -112,7 +112,7 @@
   > .#{$class-prefix}-panel-collapse > .#{$class-prefix}-table {
     margin-bottom: 0;
 
-    caption {
+    .#{$class-prefix}-tag-caption {
       padding-left: $panel-body-padding;
       padding-right: $panel-body-padding;
     }
@@ -122,18 +122,18 @@
   > .#{$class-prefix}-table-responsive:first-child > .#{$class-prefix}-table:first-child {
     @include border-top-radius(($panel-border-radius - 1));
 
-    > thead:first-child,
-    > tbody:first-child {
-      > tr:first-child {
+    > .#{$class-prefix}-tag-thead:first-child,
+    > .#{$class-prefix}-tag-tbody:first-child {
+      > .#{$class-prefix}-tag-tr:first-child {
         border-top-left-radius: ($panel-border-radius - 1);
         border-top-right-radius: ($panel-border-radius - 1);
 
-        td:first-child,
-        th:first-child {
+        .#{$class-prefix}-tag-td:first-child,
+        .#{$class-prefix}-tag-th:first-child {
           border-top-left-radius: ($panel-border-radius - 1);
         }
-        td:last-child,
-        th:last-child {
+        .#{$class-prefix}-tag-td:last-child,
+        .#{$class-prefix}-tag-th:last-child {
           border-top-right-radius: ($panel-border-radius - 1);
         }
       }
@@ -144,18 +144,18 @@
   > .#{$class-prefix}-table-responsive:last-child > .#{$class-prefix}-table:last-child {
     @include border-bottom-radius(($panel-border-radius - 1));
 
-    > tbody:last-child,
-    > tfoot:last-child {
-      > tr:last-child {
+    > .#{$class-prefix}-tag-tbody:last-child,
+    > .#{$class-prefix}-tag-tfoot:last-child {
+      > .#{$class-prefix}-tag-tr:last-child {
         border-bottom-left-radius: ($panel-border-radius - 1);
         border-bottom-right-radius: ($panel-border-radius - 1);
 
-        td:first-child,
-        th:first-child {
+        .#{$class-prefix}-tag-td:first-child,
+        .#{$class-prefix}-tag-th:first-child {
           border-bottom-left-radius: ($panel-border-radius - 1);
         }
-        td:last-child,
-        th:last-child {
+        .#{$class-prefix}-tag-td:last-child,
+        .#{$class-prefix}-tag-th:last-child {
           border-bottom-right-radius: ($panel-border-radius - 1);
         }
       }
@@ -167,41 +167,41 @@
   > .#{$class-prefix}-table-responsive + .#{$class-prefix}-panel-body {
     border-top: 1px solid $table-border-color;
   }
-  > .#{$class-prefix}-table > tbody:first-child > tr:first-child th,
-  > .#{$class-prefix}-table > tbody:first-child > tr:first-child td {
+  > .#{$class-prefix}-table > .#{$class-prefix}-tag-tbody:first-child > .#{$class-prefix}-tag-tr:first-child .#{$class-prefix}-tag-th,
+  > .#{$class-prefix}-table > .#{$class-prefix}-tag-tbody:first-child > .#{$class-prefix}-tag-tr:first-child .#{$class-prefix}-tag-td {
     border-top: 0;
   }
   > .#{$class-prefix}-table-bordered,
   > .#{$class-prefix}-table-responsive > .#{$class-prefix}-table-bordered {
     border: 0;
-    > thead,
-    > tbody,
-    > tfoot {
-      > tr {
-        > th:first-child,
-        > td:first-child {
+    > .#{$class-prefix}-tag-thead,
+    > .#{$class-prefix}-tag-tbody,
+    > .#{$class-prefix}-tag-tfoot {
+      > .#{$class-prefix}-tag-tr {
+        > .#{$class-prefix}-tag-th:first-child,
+        > .#{$class-prefix}-tag-td:first-child {
           border-left: 0;
         }
-        > th:last-child,
-        > td:last-child {
+        > .#{$class-prefix}-tag-th:last-child,
+        > .#{$class-prefix}-tag-td:last-child {
           border-right: 0;
         }
       }
     }
-    > thead,
-    > tbody {
-      > tr:first-child {
-        > td,
-        > th {
+    > .#{$class-prefix}-tag-thead,
+    > .#{$class-prefix}-tag-tbody {
+      > .#{$class-prefix}-tag-tr:first-child {
+        > .#{$class-prefix}-tag-td,
+        > .#{$class-prefix}-tag-th {
           border-bottom: 0;
         }
       }
     }
-    > tbody,
-    > tfoot {
-      > tr:last-child {
-        > td,
-        > th {
+    > .#{$class-prefix}-tag-tbody,
+    > .#{$class-prefix}-tag-tfoot {
+      > .#{$class-prefix}-tag-tr:last-child {
+        > .#{$class-prefix}-tag-td,
+        > .#{$class-prefix}-tag-th {
           border-bottom: 0;
         }
       }

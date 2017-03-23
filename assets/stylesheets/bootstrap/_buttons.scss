@@ -45,7 +45,7 @@
 
   &.#{$class-prefix}-disabled,
   &[disabled],
-  fieldset[disabled] & {
+  .#{$class-prefix}-tag-fieldset[disabled] & {
     cursor: $cursor-disabled;
     @include opacity(.65);
     @include box-shadow(none);
@@ -54,9 +54,9 @@
   // [converter] extracted a& to a.btn
 }
 
-a.#{$class-prefix}-btn {
+.#{$class-prefix}-tag-a.#{$class-prefix}-btn {
   &.#{$class-prefix}-disabled,
-  fieldset[disabled] & {
+  .#{$class-prefix}-tag-fieldset[disabled] & {
     pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
   }
 }
@@ -102,7 +102,7 @@ a.#{$class-prefix}-btn {
   &:active,
   &.#{$class-prefix}-active,
   &[disabled],
-  fieldset[disabled] & {
+  .#{$class-prefix}-tag-fieldset[disabled] & {
     background-color: transparent;
     @include box-shadow(none);
   }
@@ -119,7 +119,7 @@ a.#{$class-prefix}-btn {
     background-color: transparent;
   }
   &[disabled],
-  fieldset[disabled] & {
+  .#{$class-prefix}-tag-fieldset[disabled] & {
     &:hover,
     &:focus {
       color: $btn-link-disabled-color;
@@ -159,9 +159,9 @@ a.#{$class-prefix}-btn {
 }
 
 // Specificity overrides
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+.#{$class-prefix}-tag-input[type="submit"],
+.#{$class-prefix}-tag-input[type="reset"],
+.#{$class-prefix}-tag-input[type="button"] {
   &.#{$class-prefix}-btn-block {
     width: 100%;
   }

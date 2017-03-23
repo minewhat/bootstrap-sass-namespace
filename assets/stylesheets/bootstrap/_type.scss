@@ -6,14 +6,14 @@
 // Headings
 // -------------------------
 
-h1, h2, h3, h4, h5, h6,
+.#{$class-prefix}-tag-h1, .#{$class-prefix}-tag-h2, .#{$class-prefix}-tag-h3, .#{$class-prefix}-tag-h4, .#{$class-prefix}-tag-h5, .#{$class-prefix}-tag-h6,
 .#{$class-prefix}-h1, .#{$class-prefix}-h2, .#{$class-prefix}-h3, .#{$class-prefix}-h4, .#{$class-prefix}-h5, .#{$class-prefix}-h6 {
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   color: $headings-color;
 
-  small,
+  .#{$class-prefix}-tag-small,
   .#{$class-prefix}-small {
     font-weight: normal;
     line-height: 1;
@@ -21,41 +21,41 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-h1, .#{$class-prefix}-h1,
-h2, .#{$class-prefix}-h2,
-h3, .#{$class-prefix}-h3 {
+.#{$class-prefix}-tag-h1, .#{$class-prefix}-h1,
+.#{$class-prefix}-tag-h2, .#{$class-prefix}-h2,
+.#{$class-prefix}-tag-h3, .#{$class-prefix}-h3 {
   margin-top: $line-height-computed;
   margin-bottom: ($line-height-computed / 2);
 
-  small,
+  .#{$class-prefix}-tag-small,
   .#{$class-prefix}-small {
     font-size: 65%;
   }
 }
-h4, .#{$class-prefix}-h4,
-h5, .#{$class-prefix}-h5,
-h6, .#{$class-prefix}-h6 {
+.#{$class-prefix}-tag-h4, .#{$class-prefix}-h4,
+.#{$class-prefix}-tag-h5, .#{$class-prefix}-h5,
+.#{$class-prefix}-tag-h6, .#{$class-prefix}-h6 {
   margin-top: ($line-height-computed / 2);
   margin-bottom: ($line-height-computed / 2);
 
-  small,
+  .#{$class-prefix}-tag-small,
   .#{$class-prefix}-small {
     font-size: 75%;
   }
 }
 
-h1, .#{$class-prefix}-h1 { font-size: $font-size-h1; }
-h2, .#{$class-prefix}-h2 { font-size: $font-size-h2; }
-h3, .#{$class-prefix}-h3 { font-size: $font-size-h3; }
-h4, .#{$class-prefix}-h4 { font-size: $font-size-h4; }
-h5, .#{$class-prefix}-h5 { font-size: $font-size-h5; }
-h6, .#{$class-prefix}-h6 { font-size: $font-size-h6; }
+.#{$class-prefix}-tag-h1, .#{$class-prefix}-h1 { font-size: $font-size-h1; }
+.#{$class-prefix}-tag-h2, .#{$class-prefix}-h2 { font-size: $font-size-h2; }
+.#{$class-prefix}-tag-h3, .#{$class-prefix}-h3 { font-size: $font-size-h3; }
+.#{$class-prefix}-tag-h4, .#{$class-prefix}-h4 { font-size: $font-size-h4; }
+.#{$class-prefix}-tag-h5, .#{$class-prefix}-h5 { font-size: $font-size-h5; }
+.#{$class-prefix}-tag-h6, .#{$class-prefix}-h6 { font-size: $font-size-h6; }
 
 
 // Body text
 // -------------------------
 
-p {
+.#{$class-prefix}-tag-p {
   margin: 0 0 ($line-height-computed / 2);
 }
 
@@ -75,12 +75,12 @@ p {
 // -------------------------
 
 // Ex: (12px small font / 14px base font) * 100% = about 85%
-small,
+.#{$class-prefix}-tag-small,
 .#{$class-prefix}-small {
   font-size: floor((100% * $font-size-small / $font-size-base));
 }
 
-mark,
+.#{$class-prefix}-tag-mark,
 .#{$class-prefix}-mark {
   background-color: $state-warning-bg;
   padding: .2em;
@@ -146,12 +146,12 @@ mark,
 // -------------------------
 
 // Unordered and Ordered lists
-ul,
-ol {
+.#{$class-prefix}-tag-ul,
+.#{$class-prefix}-tag-ol {
   margin-top: 0;
   margin-bottom: ($line-height-computed / 2);
-  ul,
-  ol {
+  .#{$class-prefix}-tag-ul,
+  .#{$class-prefix}-tag-ol {
     margin-bottom: 0;
   }
 }
@@ -174,7 +174,7 @@ ol {
   @include list-unstyled;
   margin-left: -5px;
 
-  > li {
+  > .#{$class-prefix}-tag-li {
     display: inline-block;
     padding-left: 5px;
     padding-right: 5px;
@@ -182,18 +182,18 @@ ol {
 }
 
 // Description Lists
-dl {
+.#{$class-prefix}-tag-dl {
   margin-top: 0; // Remove browser default
   margin-bottom: $line-height-computed;
 }
-dt,
-dd {
+.#{$class-prefix}-tag-dt,
+.#{$class-prefix}-tag-dd {
   line-height: $line-height-base;
 }
-dt {
+.#{$class-prefix}-tag-dt {
   font-weight: bold;
 }
-dd {
+.#{$class-prefix}-tag-dd {
   margin-left: 0; // Undo browser default
 }
 
@@ -203,19 +203,19 @@ dd {
 // grid breakpoint is reached (default of ~768px).
 
 .#{$class-prefix}-dl-horizontal {
-  dd {
+  .#{$class-prefix}-tag-dd {
     @include clearfix; // Clear the floated `dt` if an empty `dd` is present
   }
 
   @media (min-width: $dl-horizontal-breakpoint) {
-    dt {
+    .#{$class-prefix}-tag-dt {
       float: left;
       width: ($dl-horizontal-offset - 20);
       clear: left;
       text-align: right;
       @include text-overflow;
     }
-    dd {
+    .#{$class-prefix}-tag-dd {
       margin-left: $dl-horizontal-offset;
     }
   }
@@ -226,9 +226,9 @@ dd {
 // -------------------------
 
 // Abbreviations and acronyms
-abbr[title],
+.#{$class-prefix}-tag-abbr[title],
 // Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
-abbr[data-original-title] {
+.#{$class-prefix}-tag-abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted $abbr-border-color;
 }
@@ -238,15 +238,15 @@ abbr[data-original-title] {
 }
 
 // Blockquotes
-blockquote {
+.#{$class-prefix}-tag-blockquote {
   padding: ($line-height-computed / 2) $line-height-computed;
   margin: 0 0 $line-height-computed;
   font-size: $blockquote-font-size;
   border-left: 5px solid $blockquote-border-color;
 
-  p,
-  ul,
-  ol {
+  .#{$class-prefix}-tag-p,
+  .#{$class-prefix}-tag-ul,
+  .#{$class-prefix}-tag-ol {
     &:last-child {
       margin-bottom: 0;
     }
@@ -254,8 +254,8 @@ blockquote {
 
   // Note: Deprecated small and .small as of v3.1.0
   // Context: https://github.com/twbs/bootstrap/issues/11660
-  footer,
-  small,
+  .#{$class-prefix}-tag-footer,
+  .#{$class-prefix}-tag-small,
   .#{$class-prefix}-small {
     display: block;
     font-size: 80%; // back to default font-size
@@ -272,7 +272,7 @@ blockquote {
 //
 // Heads up: `blockquote.pull-right` has been deprecated as of v3.1.0.
 .#{$class-prefix}-blockquote-reverse,
-blockquote.#{$class-prefix}-pull-right {
+.#{$class-prefix}-tag-blockquote.#{$class-prefix}-pull-right {
   padding-right: 15px;
   padding-left: 0;
   border-right: 5px solid $blockquote-border-color;
@@ -280,8 +280,8 @@ blockquote.#{$class-prefix}-pull-right {
   text-align: right;
 
   // Account for citation
-  footer,
-  small,
+  .#{$class-prefix}-tag-footer,
+  .#{$class-prefix}-tag-small,
   .#{$class-prefix}-small {
     &:before { content: ''; }
     &:after {
@@ -291,7 +291,7 @@ blockquote.#{$class-prefix}-pull-right {
 }
 
 // Addresses
-address {
+.#{$class-prefix}-tag-address {
   margin-bottom: $line-height-computed;
   font-style: normal;
   line-height: $line-height-base;

@@ -234,8 +234,8 @@
 [data-toggle="buttons"] {
   > .#{$class-prefix}-btn,
   > .#{$class-prefix}-btn-group > .#{$class-prefix}-btn {
-    input[type="radio"],
-    input[type="checkbox"] {
+    .#{$class-prefix}-tag-input[type="radio"],
+    .#{$class-prefix}-tag-input[type="checkbox"] {
       position: absolute;
       clip: rect(0,0,0,0);
       pointer-events: none;
