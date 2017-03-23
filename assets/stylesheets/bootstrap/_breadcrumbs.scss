@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 
-.breadcrumb {
+.#{$class-prefix}-breadcrumb {
   padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
   margin-bottom: $line-height-computed;
   list-style: none;
@@ -22,7 +22,7 @@
     }
   }
 
-  > .active {
+  > .#{$class-prefix}-active {
     color: $breadcrumb-active-color;
   }
 }

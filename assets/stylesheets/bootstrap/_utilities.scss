@@ -6,16 +6,16 @@
 // Floats
 // -------------------------
 
-.clearfix {
+.#{$class-prefix}-clearfix {
   @include clearfix;
 }
-.center-block {
+.#{$class-prefix}-center-block {
   @include center-block;
 }
-.pull-right {
+.#{$class-prefix}-pull-right {
   float: right !important;
 }
-.pull-left {
+.#{$class-prefix}-pull-left {
   float: left !important;
 }
 
@@ -24,16 +24,16 @@
 // -------------------------
 
 // Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
-.hide {
+.#{$class-prefix}-hide {
   display: none !important;
 }
-.show {
+.#{$class-prefix}-show {
   display: block !important;
 }
-.invisible {
+.#{$class-prefix}-invisible {
   visibility: hidden;
 }
-.text-hide {
+.#{$class-prefix}-text-hide {
   @include text-hide;
 }
 
@@ -42,7 +42,7 @@
 //
 // Credit: HTML5 Boilerplate
 
-.hidden {
+.#{$class-prefix}-hidden {
   display: none !important;
 }
 
@@ -50,6 +50,6 @@
 // For Affix plugin
 // -------------------------
 
-.affix {
+.#{$class-prefix}-affix {
   position: fixed;
 }

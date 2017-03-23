@@ -9,7 +9,7 @@
   border-color: $border;
 
   &:focus,
-  &.focus {
+  &.#{$class-prefix}-focus {
     color: $color;
     background-color: darken($background, 10%);
         border-color: darken($border, 25%);
@@ -20,37 +20,37 @@
         border-color: darken($border, 12%);
   }
   &:active,
-  &.active,
-  .open > &.dropdown-toggle {
+  &.#{$class-prefix}-active,
+  .#{$class-prefix}-open > &.#{$class-prefix}-dropdown-toggle {
     color: $color;
     background-color: darken($background, 10%);
         border-color: darken($border, 12%);
 
     &:hover,
     &:focus,
-    &.focus {
+    &.#{$class-prefix}-focus {
       color: $color;
       background-color: darken($background, 17%);
           border-color: darken($border, 25%);
     }
   }
   &:active,
-  &.active,
-  .open > &.dropdown-toggle {
+  &.#{$class-prefix}-active,
+  .#{$class-prefix}-open > &.#{$class-prefix}-dropdown-toggle {
     background-image: none;
   }
-  &.disabled,
+  &.#{$class-prefix}-disabled,
   &[disabled],
   fieldset[disabled] & {
     &:hover,
     &:focus,
-    &.focus {
+    &.#{$class-prefix}-focus {
       background-color: $background;
           border-color: $border;
     }
   }
 
-  .badge {
+  .#{$class-prefix}-badge {
     color: $background;
     background-color: $color;
   }

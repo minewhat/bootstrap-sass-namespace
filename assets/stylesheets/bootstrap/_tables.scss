@@ -19,7 +19,7 @@ th {
 
 // Baseline styles
 
-.table {
+.#{$class-prefix}-table {
   width: 100%;
   max-width: 100%;
   margin-bottom: $line-height-computed;
@@ -59,7 +59,7 @@ th {
   }
 
   // Nesting
-  .table {
+  .#{$class-prefix}-table {
     background-color: $body-bg;
   }
 }
@@ -67,7 +67,7 @@ th {
 
 // Condensed table w/ half padding
 
-.table-condensed {
+.#{$class-prefix}-table-condensed {
   > thead,
   > tbody,
   > tfoot {
@@ -85,7 +85,7 @@ th {
 //
 // Add borders all around the table and between all the columns.
 
-.table-bordered {
+.#{$class-prefix}-table-bordered {
   border: 1px solid $table-border-color;
   > thead,
   > tbody,
@@ -110,7 +110,7 @@ th {
 //
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
-.table-striped {
+.#{$class-prefix}-table-striped {
   > tbody > tr:nth-of-type(odd) {
     background-color: $table-bg-accent;
   }
@@ -121,7 +121,7 @@ th {
 //
 // Placed here since it has to come after the potential zebra striping
 
-.table-hover {
+.#{$class-prefix}-table-hover {
   > tbody > tr:hover {
     background-color: $table-bg-hover;
   }
@@ -168,7 +168,7 @@ table {
 // by enabling horizontal scrolling. Only applies <768px. Everything above that
 // will display normally.
 
-.table-responsive {
+.#{$class-prefix}-table-responsive {
   overflow-x: auto;
   min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
 
@@ -180,7 +180,7 @@ table {
     border: 1px solid $table-border-color;
 
     // Tighten up spacing
-    > .table {
+    > .#{$class-prefix}-table {
       margin-bottom: 0;
 
       // Ensure the content doesn't wrap
@@ -197,7 +197,7 @@ table {
     }
 
     // Special overrides for the bordered tables
-    > .table-bordered {
+    > .#{$class-prefix}-table-bordered {
       border: 0;
 
       // Nuke the appropriate borders so that the parent can handle them

@@ -1,7 +1,7 @@
 //
 // Pagination (multiple pages)
 // --------------------------------------------------
-.pagination {
+.#{$class-prefix}-pagination {
   display: inline-block;
   padding-left: 0;
   margin: $line-height-computed 0;
@@ -47,8 +47,8 @@
     }
   }
 
-  > .active > a,
-  > .active > span {
+  > .#{$class-prefix}-active > a,
+  > .#{$class-prefix}-active > span {
     &,
     &:hover,
     &:focus {
@@ -60,7 +60,7 @@
     }
   }
 
-  > .disabled {
+  > .#{$class-prefix}-disabled {
     > span,
     > span:hover,
     > span:focus,
@@ -79,11 +79,11 @@
 // --------------------------------------------------
 
 // Large
-.pagination-lg {
+.#{$class-prefix}-pagination-lg {
   @include pagination-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
 }
 
 // Small
-.pagination-sm {
+.#{$class-prefix}-pagination-sm {
   @include pagination-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
 }

@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 
-.jumbotron {
+.#{$class-prefix}-jumbotron {
   padding-top:    $jumbotron-padding;
   padding-bottom: $jumbotron-padding;
   margin-bottom: $jumbotron-padding;
@@ -11,7 +11,7 @@
   background-color: $jumbotron-bg;
 
   h1,
-  .h1 {
+  .#{$class-prefix}-h1 {
     color: $jumbotron-heading-color;
   }
 
@@ -25,14 +25,14 @@
     border-top-color: darken($jumbotron-bg, 10%);
   }
 
-  .container &,
-  .container-fluid & {
+  .#{$class-prefix}-container &,
+  .#{$class-prefix}-container-fluid & {
     border-radius: $border-radius-large; // Only round corners at higher resolutions if contained in a container
     padding-left:  ($grid-gutter-width / 2);
     padding-right: ($grid-gutter-width / 2);
   }
 
-  .container {
+  .#{$class-prefix}-container {
     max-width: 100%;
   }
 
@@ -40,14 +40,14 @@
     padding-top:    ($jumbotron-padding * 1.6);
     padding-bottom: ($jumbotron-padding * 1.6);
 
-    .container &,
-    .container-fluid & {
+    .#{$class-prefix}-container &,
+    .#{$class-prefix}-container-fluid & {
       padding-left:  ($jumbotron-padding * 2);
       padding-right: ($jumbotron-padding * 2);
     }
 
     h1,
-    .h1 {
+    .#{$class-prefix}-h1 {
       font-size: $jumbotron-heading-font-size;
     }
   }

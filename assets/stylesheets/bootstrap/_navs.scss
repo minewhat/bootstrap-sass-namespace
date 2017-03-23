@@ -6,7 +6,7 @@
 // Base class
 // --------------------------------------------------
 
-.nav {
+.#{$class-prefix}-nav {
   margin-bottom: 0;
   padding-left: 0; // Override default ul/ol
   list-style: none;
@@ -28,7 +28,7 @@
     }
 
     // Disabled state sets text to gray and nukes hover/tab effects
-    &.disabled > a {
+    &.#{$class-prefix}-disabled > a {
       color: $nav-disabled-link-color;
 
       &:hover,
@@ -42,7 +42,7 @@
   }
 
   // Open dropdowns
-  .open > a {
+  .#{$class-prefix}-open > a {
     &,
     &:hover,
     &:focus {
@@ -56,7 +56,7 @@
   // This should have been removed in v3 with the dropping of `.nav-list`, but
   // we missed it. We don't currently support this anywhere, but in the interest
   // of maintaining backward compatibility in case you use it, it's deprecated.
-  .nav-divider {
+  .#{$class-prefix}-nav-divider {
     @include nav-divider;
   }
 
@@ -73,7 +73,7 @@
 // -------------------------
 
 // Give the tabs something to sit on
-.nav-tabs {
+.#{$class-prefix}-nav-tabs {
   border-bottom: 1px solid $nav-tabs-border-color;
   > li {
     float: left;
@@ -92,7 +92,7 @@
     }
 
     // Active state, and its :hover to override normal :hover
-    &.active > a {
+    &.#{$class-prefix}-active > a {
       &,
       &:hover,
       &:focus {
@@ -105,16 +105,16 @@
     }
   }
   // pulling this in mainly for less shorthand
-  &.nav-justified {
-    @extend .nav-justified;
-    @extend .nav-tabs-justified;
+  &.#{$class-prefix}-nav-justified {
+    @extend .#{$class-prefix}-nav-justified;
+    @extend .#{$class-prefix}-nav-tabs-justified;
   }
 }
 
 
 // Pills
 // -------------------------
-.nav-pills {
+.#{$class-prefix}-nav-pills {
   > li {
     float: left;
 
@@ -127,7 +127,7 @@
     }
 
     // Active state
-    &.active > a {
+    &.#{$class-prefix}-active > a {
       &,
       &:hover,
       &:focus {
@@ -140,7 +140,7 @@
 
 
 // Stacked pills
-.nav-stacked {
+.#{$class-prefix}-nav-stacked {
   > li {
     float: none;
     + li {
@@ -157,7 +157,7 @@
 // Justified nav links
 // -------------------------
 
-.nav-justified {
+.#{$class-prefix}-nav-justified {
   width: 100%;
 
   > li {
@@ -168,7 +168,7 @@
     }
   }
 
-  > .dropdown .dropdown-menu {
+  > .#{$class-prefix}-dropdown .#{$class-prefix}-dropdown-menu {
     top: auto;
     left: auto;
   }
@@ -187,7 +187,7 @@
 // Move borders to anchors instead of bottom of list
 //
 // Mixin for adding on top the shared `.nav-justified` styles for our tabs
-.nav-tabs-justified {
+.#{$class-prefix}-nav-tabs-justified {
   border-bottom: 0;
 
   > li > a {
@@ -196,9 +196,9 @@
     border-radius: $border-radius-base;
   }
 
-  > .active > a,
-  > .active > a:hover,
-  > .active > a:focus {
+  > .#{$class-prefix}-active > a,
+  > .#{$class-prefix}-active > a:hover,
+  > .#{$class-prefix}-active > a:focus {
     border: 1px solid $nav-tabs-justified-link-border-color;
   }
 
@@ -207,9 +207,9 @@
       border-bottom: 1px solid $nav-tabs-justified-link-border-color;
       border-radius: $border-radius-base $border-radius-base 0 0;
     }
-    > .active > a,
-    > .active > a:hover,
-    > .active > a:focus {
+    > .#{$class-prefix}-active > a,
+    > .#{$class-prefix}-active > a:hover,
+    > .#{$class-prefix}-active > a:focus {
       border-bottom-color: $nav-tabs-justified-active-link-border-color;
     }
   }
@@ -220,11 +220,11 @@
 // -------------------------
 
 // Hide tabbable panes to start, show them when `.active`
-.tab-content {
-  > .tab-pane {
+.#{$class-prefix}-tab-content {
+  > .#{$class-prefix}-tab-pane {
     display: none;
   }
-  > .active {
+  > .#{$class-prefix}-active {
     display: block;
   }
 }
@@ -234,7 +234,7 @@
 // -------------------------
 
 // Specific dropdowns
-.nav-tabs .dropdown-menu {
+.#{$class-prefix}-nav-tabs .#{$class-prefix}-dropdown-menu {
   // make dropdown border overlap tab border
   margin-top: -1px;
   // Remove the top rounded corners here since there is a hard edge above the menu

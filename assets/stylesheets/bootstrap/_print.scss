@@ -69,20 +69,20 @@
     // Bootstrap specific changes start
 
     // Bootstrap components
-    .navbar {
+    .#{$class-prefix}-navbar {
         display: none;
     }
-    .btn,
-    .dropup > .btn {
-        > .caret {
+    .#{$class-prefix}-btn,
+    .#{$class-prefix}-dropup > .#{$class-prefix}-btn {
+        > .#{$class-prefix}-caret {
             border-top-color: #000 !important;
         }
     }
-    .label {
+    .#{$class-prefix}-label {
         border: 1px solid #000;
     }
 
-    .table {
+    .#{$class-prefix}-table {
         border-collapse: collapse !important;
 
         td,
@@ -90,7 +90,7 @@
             background-color: #fff !important;
         }
     }
-    .table-bordered {
+    .#{$class-prefix}-table-bordered {
         th,
         td {
             border: 1px solid #ddd !important;

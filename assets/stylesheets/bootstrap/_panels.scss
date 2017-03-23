@@ -4,7 +4,7 @@
 
 
 // Base class
-.panel {
+.#{$class-prefix}-panel {
   margin-bottom: $line-height-computed;
   background-color: $panel-bg;
   border: 1px solid transparent;
@@ -13,24 +13,24 @@
 }
 
 // Panel contents
-.panel-body {
+.#{$class-prefix}-panel-body {
   padding: $panel-body-padding;
   @include clearfix;
 }
 
 // Optional heading
-.panel-heading {
+.#{$class-prefix}-panel-heading {
   padding: $panel-heading-padding;
   border-bottom: 1px solid transparent;
   @include border-top-radius(($panel-border-radius - 1));
 
-  > .dropdown .dropdown-toggle {
+  > .#{$class-prefix}-dropdown .#{$class-prefix}-dropdown-toggle {
     color: inherit;
   }
 }
 
 // Within heading, strip any `h*` tag of its default margins for spacing.
-.panel-title {
+.#{$class-prefix}-panel-title {
   margin-top: 0;
   margin-bottom: 0;
   font-size: ceil(($font-size-base * 1.125));
@@ -38,15 +38,15 @@
 
   > a,
   > small,
-  > .small,
+  > .#{$class-prefix}-small,
   > small > a,
-  > .small > a {
+  > .#{$class-prefix}-small > a {
     color: inherit;
   }
 }
 
 // Optional footer (stays gray in every modifier class)
-.panel-footer {
+.#{$class-prefix}-panel-footer {
   padding: $panel-footer-padding;
   background-color: $panel-footer-bg;
   border-top: 1px solid $panel-inner-border;
@@ -59,19 +59,19 @@
 // By default, space out list group content from panel headings to account for
 // any kind of custom content between the two.
 
-.panel {
-  > .list-group,
-  > .panel-collapse > .list-group {
+.#{$class-prefix}-panel {
+  > .#{$class-prefix}-list-group,
+  > .#{$class-prefix}-panel-collapse > .#{$class-prefix}-list-group {
     margin-bottom: 0;
 
-    .list-group-item {
+    .#{$class-prefix}-list-group-item {
       border-width: 1px 0;
       border-radius: 0;
     }
 
     // Add border top radius for first one
     &:first-child {
-      .list-group-item:first-child {
+      .#{$class-prefix}-list-group-item:first-child {
         border-top: 0;
         @include border-top-radius(($panel-border-radius - 1));
       }
@@ -79,25 +79,25 @@
 
     // Add border bottom radius for last one
     &:last-child {
-      .list-group-item:last-child {
+      .#{$class-prefix}-list-group-item:last-child {
         border-bottom: 0;
         @include border-bottom-radius(($panel-border-radius - 1));
       }
     }
   }
-  > .panel-heading + .panel-collapse > .list-group {
-    .list-group-item:first-child {
+  > .#{$class-prefix}-panel-heading + .#{$class-prefix}-panel-collapse > .#{$class-prefix}-list-group {
+    .#{$class-prefix}-list-group-item:first-child {
       @include border-top-radius(0);
     }
   }
 }
 // Collapse space between when there's no additional content.
-.panel-heading + .list-group {
-  .list-group-item:first-child {
+.#{$class-prefix}-panel-heading + .#{$class-prefix}-list-group {
+  .#{$class-prefix}-list-group-item:first-child {
     border-top-width: 0;
   }
 }
-.list-group + .panel-footer {
+.#{$class-prefix}-list-group + .#{$class-prefix}-panel-footer {
   border-top-width: 0;
 }
 
@@ -106,10 +106,10 @@
 // Place a non-bordered `.table` within a panel (not within a `.panel-body`) and
 // watch it go full width.
 
-.panel {
-  > .table,
-  > .table-responsive > .table,
-  > .panel-collapse > .table {
+.#{$class-prefix}-panel {
+  > .#{$class-prefix}-table,
+  > .#{$class-prefix}-table-responsive > .#{$class-prefix}-table,
+  > .#{$class-prefix}-panel-collapse > .#{$class-prefix}-table {
     margin-bottom: 0;
 
     caption {
@@ -118,8 +118,8 @@
     }
   }
   // Add border top radius for first one
-  > .table:first-child,
-  > .table-responsive:first-child > .table:first-child {
+  > .#{$class-prefix}-table:first-child,
+  > .#{$class-prefix}-table-responsive:first-child > .#{$class-prefix}-table:first-child {
     @include border-top-radius(($panel-border-radius - 1));
 
     > thead:first-child,
@@ -140,8 +140,8 @@
     }
   }
   // Add border bottom radius for last one
-  > .table:last-child,
-  > .table-responsive:last-child > .table:last-child {
+  > .#{$class-prefix}-table:last-child,
+  > .#{$class-prefix}-table-responsive:last-child > .#{$class-prefix}-table:last-child {
     @include border-bottom-radius(($panel-border-radius - 1));
 
     > tbody:last-child,
@@ -161,18 +161,18 @@
       }
     }
   }
-  > .panel-body + .table,
-  > .panel-body + .table-responsive,
-  > .table + .panel-body,
-  > .table-responsive + .panel-body {
+  > .#{$class-prefix}-panel-body + .#{$class-prefix}-table,
+  > .#{$class-prefix}-panel-body + .#{$class-prefix}-table-responsive,
+  > .#{$class-prefix}-table + .#{$class-prefix}-panel-body,
+  > .#{$class-prefix}-table-responsive + .#{$class-prefix}-panel-body {
     border-top: 1px solid $table-border-color;
   }
-  > .table > tbody:first-child > tr:first-child th,
-  > .table > tbody:first-child > tr:first-child td {
+  > .#{$class-prefix}-table > tbody:first-child > tr:first-child th,
+  > .#{$class-prefix}-table > tbody:first-child > tr:first-child td {
     border-top: 0;
   }
-  > .table-bordered,
-  > .table-responsive > .table-bordered {
+  > .#{$class-prefix}-table-bordered,
+  > .#{$class-prefix}-table-responsive > .#{$class-prefix}-table-bordered {
     border: 0;
     > thead,
     > tbody,
@@ -207,7 +207,7 @@
       }
     }
   }
-  > .table-responsive {
+  > .#{$class-prefix}-table-responsive {
     border: 0;
     margin-bottom: 0;
   }
@@ -219,31 +219,31 @@
 // Wrap a series of panels in `.panel-group` to turn them into an accordion with
 // the help of our collapse JavaScript plugin.
 
-.panel-group {
+.#{$class-prefix}-panel-group {
   margin-bottom: $line-height-computed;
 
   // Tighten up margin so it's only between panels
-  .panel {
+  .#{$class-prefix}-panel {
     margin-bottom: 0;
     border-radius: $panel-border-radius;
 
-    + .panel {
+    + .#{$class-prefix}-panel {
       margin-top: 5px;
     }
   }
 
-  .panel-heading {
+  .#{$class-prefix}-panel-heading {
     border-bottom: 0;
 
-    + .panel-collapse > .panel-body,
-    + .panel-collapse > .list-group {
+    + .#{$class-prefix}-panel-collapse > .#{$class-prefix}-panel-body,
+    + .#{$class-prefix}-panel-collapse > .#{$class-prefix}-list-group {
       border-top: 1px solid $panel-inner-border;
     }
   }
 
-  .panel-footer {
+  .#{$class-prefix}-panel-footer {
     border-top: 0;
-    + .panel-collapse .panel-body {
+    + .#{$class-prefix}-panel-collapse .#{$class-prefix}-panel-body {
       border-bottom: 1px solid $panel-inner-border;
     }
   }
@@ -251,21 +251,21 @@
 
 
 // Contextual variations
-.panel-default {
+.#{$class-prefix}-panel-default {
   @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
 }
-.panel-primary {
+.#{$class-prefix}-panel-primary {
   @include panel-variant($panel-primary-border, $panel-primary-text, $panel-primary-heading-bg, $panel-primary-border);
 }
-.panel-success {
+.#{$class-prefix}-panel-success {
   @include panel-variant($panel-success-border, $panel-success-text, $panel-success-heading-bg, $panel-success-border);
 }
-.panel-info {
+.#{$class-prefix}-panel-info {
   @include panel-variant($panel-info-border, $panel-info-text, $panel-info-heading-bg, $panel-info-border);
 }
-.panel-warning {
+.#{$class-prefix}-panel-warning {
   @include panel-variant($panel-warning-border, $panel-warning-text, $panel-warning-heading-bg, $panel-warning-border);
 }
-.panel-danger {
+.#{$class-prefix}-panel-danger {
   @include panel-variant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
 }

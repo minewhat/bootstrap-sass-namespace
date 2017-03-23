@@ -1,4 +1,4 @@
-.media {
+.#{$class-prefix}-media {
   // Proper spacing between instances of .media
   margin-top: 15px;
 
@@ -7,52 +7,52 @@
   }
 }
 
-.media,
-.media-body {
+.#{$class-prefix}-media,
+.#{$class-prefix}-media-body {
   zoom: 1;
   overflow: hidden;
 }
 
-.media-body {
+.#{$class-prefix}-media-body {
   width: 10000px;
 }
 
-.media-object {
+.#{$class-prefix}-media-object {
   display: block;
 
   // Fix collapse in webkit from max-width: 100% and display: table-cell.
-  &.img-thumbnail {
+  &.#{$class-prefix}-img-thumbnail {
     max-width: none;
   }
 }
 
-.media-right,
-.media > .pull-right {
+.#{$class-prefix}-media-right,
+.#{$class-prefix}-media > .#{$class-prefix}-pull-right {
   padding-left: 10px;
 }
 
-.media-left,
-.media > .pull-left {
+.#{$class-prefix}-media-left,
+.#{$class-prefix}-media > .#{$class-prefix}-pull-left {
   padding-right: 10px;
 }
 
-.media-left,
-.media-right,
-.media-body {
+.#{$class-prefix}-media-left,
+.#{$class-prefix}-media-right,
+.#{$class-prefix}-media-body {
   display: table-cell;
   vertical-align: top;
 }
 
-.media-middle {
+.#{$class-prefix}-media-middle {
   vertical-align: middle;
 }
 
-.media-bottom {
+.#{$class-prefix}-media-bottom {
   vertical-align: bottom;
 }
 
 // Reset margins on headings for tighter default spacing
-.media-heading {
+.#{$class-prefix}-media-heading {
   margin-top: 0;
   margin-bottom: 5px;
 }
@@ -60,7 +60,7 @@
 // Media list variation
 //
 // Undo default ul/ol styles
-.media-list {
+.#{$class-prefix}-media-list {
   padding-left: 0;
   list-style: none;
 }

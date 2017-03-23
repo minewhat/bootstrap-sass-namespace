@@ -1,18 +1,18 @@
 // List Groups
 
 @mixin list-group-item-variant($state, $background, $color) {
-  .list-group-item-#{$state} {
+  .#{$class-prefix}-list-group-item-#{$state} {
     color: $color;
     background-color: $background;
 
     // [converter] extracted a&, button& to a.list-group-item-#{$state}, button.list-group-item-#{$state}
   }
 
-  a.list-group-item-#{$state},
-  button.list-group-item-#{$state} {
+  a.#{$class-prefix}-list-group-item-#{$state},
+  button.#{$class-prefix}-list-group-item-#{$state} {
     color: $color;
 
-    .list-group-item-heading {
+    .#{$class-prefix}-list-group-item-heading {
       color: inherit;
     }
 
@@ -21,9 +21,9 @@
       color: $color;
       background-color: darken($background, 5%);
     }
-    &.active,
-    &.active:hover,
-    &.active:focus {
+    &.#{$class-prefix}-active,
+    &.#{$class-prefix}-active:hover,
+    &.#{$class-prefix}-active:focus {
       color: #fff;
       background-color: $color;
       border-color: $color;

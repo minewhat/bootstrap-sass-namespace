@@ -8,12 +8,12 @@
 // .modal-content   - actual modal w/ bg and corners and shit
 
 // Kill the scroll on the body
-.modal-open {
+.#{$class-prefix}-modal-open {
   overflow: hidden;
 }
 
 // Container that the modal scrolls within
-.modal {
+.#{$class-prefix}-modal {
   display: none;
   overflow: hidden;
   position: fixed;
@@ -29,26 +29,26 @@
   outline: 0;
 
   // When fading in the modal, animate it to slide down
-  &.fade .modal-dialog {
+  &.#{$class-prefix}-fade .#{$class-prefix}-modal-dialog {
     @include translate(0, -25%);
     @include transition-transform(0.3s ease-out);
   }
-  &.in .modal-dialog { @include translate(0, 0) }
+  &.#{$class-prefix}-in .#{$class-prefix}-modal-dialog { @include translate(0, 0) }
 }
-.modal-open .modal {
+.#{$class-prefix}-modal-open .#{$class-prefix}-modal {
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 // Shell div to position the modal with bottom padding
-.modal-dialog {
+.#{$class-prefix}-modal-dialog {
   position: relative;
   width: auto;
   margin: 10px;
 }
 
 // Actual modal
-.modal-content {
+.#{$class-prefix}-modal-content {
   position: relative;
   background-color: $modal-content-bg;
   border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
@@ -61,7 +61,7 @@
 }
 
 // Modal background
-.modal-backdrop {
+.#{$class-prefix}-modal-backdrop {
   position: fixed;
   top: 0;
   right: 0;
@@ -70,59 +70,59 @@
   z-index: $zindex-modal-background;
   background-color: $modal-backdrop-bg;
   // Fade for backdrop
-  &.fade { @include opacity(0); }
-  &.in { @include opacity($modal-backdrop-opacity); }
+  &.#{$class-prefix}-fade { @include opacity(0); }
+  &.#{$class-prefix}-in { @include opacity($modal-backdrop-opacity); }
 }
 
 // Modal header
 // Top section of the modal w/ title and dismiss
-.modal-header {
+.#{$class-prefix}-modal-header {
   padding: $modal-title-padding;
   border-bottom: 1px solid $modal-header-border-color;
   @include clearfix;
 }
 // Close icon
-.modal-header .close {
+.#{$class-prefix}-modal-header .#{$class-prefix}-close {
   margin-top: -2px;
 }
 
 // Title text within header
-.modal-title {
+.#{$class-prefix}-modal-title {
   margin: 0;
   line-height: $modal-title-line-height;
 }
 
 // Modal body
 // Where all modal content resides (sibling of .modal-header and .modal-footer)
-.modal-body {
+.#{$class-prefix}-modal-body {
   position: relative;
   padding: $modal-inner-padding;
 }
 
 // Footer (for actions)
-.modal-footer {
+.#{$class-prefix}-modal-footer {
   padding: $modal-inner-padding;
   text-align: right; // right align buttons
   border-top: 1px solid $modal-footer-border-color;
   @include clearfix; // clear it in case folks use .pull-* classes on buttons
 
   // Properly space out buttons
-  .btn + .btn {
+  .#{$class-prefix}-btn + .#{$class-prefix}-btn {
     margin-left: 5px;
     margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
   }
   // but override that for button groups
-  .btn-group .btn + .btn {
+  .#{$class-prefix}-btn-group .#{$class-prefix}-btn + .#{$class-prefix}-btn {
     margin-left: -1px;
   }
   // and override it for block buttons as well
-  .btn-block + .btn-block {
+  .#{$class-prefix}-btn-block + .#{$class-prefix}-btn-block {
     margin-left: 0;
   }
 }
 
 // Measure scrollbar width for padding body during modal show/hide
-.modal-scrollbar-measure {
+.#{$class-prefix}-modal-scrollbar-measure {
   position: absolute;
   top: -9999px;
   width: 50px;
@@ -133,18 +133,18 @@
 // Scale up the modal
 @media (min-width: $screen-sm-min) {
   // Automatically set modal's width for larger viewports
-  .modal-dialog {
+  .#{$class-prefix}-modal-dialog {
     width: $modal-md;
     margin: 30px auto;
   }
-  .modal-content {
+  .#{$class-prefix}-modal-content {
     @include box-shadow(0 5px 15px rgba(0,0,0,.5));
   }
 
   // Modal sizes
-  .modal-sm { width: $modal-sm; }
+  .#{$class-prefix}-modal-sm { width: $modal-sm; }
 }
 
 @media (min-width: $screen-md-min) {
-  .modal-lg { width: $modal-lg; }
+  .#{$class-prefix}-modal-lg { width: $modal-lg; }
 }

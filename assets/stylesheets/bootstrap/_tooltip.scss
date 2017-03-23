@@ -4,7 +4,7 @@
 
 
 // Base class
-.tooltip {
+.#{$class-prefix}-tooltip {
   position: absolute;
   z-index: $zindex-tooltip;
   display: block;
@@ -15,15 +15,15 @@
 
   @include opacity(0);
 
-  &.in     { @include opacity($tooltip-opacity); }
-  &.top    { margin-top:  -3px; padding: $tooltip-arrow-width 0; }
-  &.right  { margin-left:  3px; padding: 0 $tooltip-arrow-width; }
-  &.bottom { margin-top:   3px; padding: $tooltip-arrow-width 0; }
-  &.left   { margin-left: -3px; padding: 0 $tooltip-arrow-width; }
+  &.#{$class-prefix}-in     { @include opacity($tooltip-opacity); }
+  &.#{$class-prefix}-top    { margin-top:  -3px; padding: $tooltip-arrow-width 0; }
+  &.#{$class-prefix}-right  { margin-left:  3px; padding: 0 $tooltip-arrow-width; }
+  &.#{$class-prefix}-bottom { margin-top:   3px; padding: $tooltip-arrow-width 0; }
+  &.#{$class-prefix}-left   { margin-left: -3px; padding: 0 $tooltip-arrow-width; }
 }
 
 // Wrapper for the tooltip content
-.tooltip-inner {
+.#{$class-prefix}-tooltip-inner {
   max-width: $tooltip-max-width;
   padding: 3px 8px;
   color: $tooltip-color;
@@ -33,7 +33,7 @@
 }
 
 // Arrows
-.tooltip-arrow {
+.#{$class-prefix}-tooltip-arrow {
   position: absolute;
   width: 0;
   height: 0;
@@ -41,57 +41,57 @@
   border-style: solid;
 }
 // Note: Deprecated .top-left, .top-right, .bottom-left, and .bottom-right as of v3.3.1
-.tooltip {
-  &.top .tooltip-arrow {
+.#{$class-prefix}-tooltip {
+  &.#{$class-prefix}-top .#{$class-prefix}-tooltip-arrow {
     bottom: 0;
     left: 50%;
     margin-left: -$tooltip-arrow-width;
     border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
     border-top-color: $tooltip-arrow-color;
   }
-  &.top-left .tooltip-arrow {
+  &.#{$class-prefix}-top-left .#{$class-prefix}-tooltip-arrow {
     bottom: 0;
     right: $tooltip-arrow-width;
     margin-bottom: -$tooltip-arrow-width;
     border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
     border-top-color: $tooltip-arrow-color;
   }
-  &.top-right .tooltip-arrow {
+  &.#{$class-prefix}-top-right .#{$class-prefix}-tooltip-arrow {
     bottom: 0;
     left: $tooltip-arrow-width;
     margin-bottom: -$tooltip-arrow-width;
     border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
     border-top-color: $tooltip-arrow-color;
   }
-  &.right .tooltip-arrow {
+  &.#{$class-prefix}-right .#{$class-prefix}-tooltip-arrow {
     top: 50%;
     left: 0;
     margin-top: -$tooltip-arrow-width;
     border-width: $tooltip-arrow-width $tooltip-arrow-width $tooltip-arrow-width 0;
     border-right-color: $tooltip-arrow-color;
   }
-  &.left .tooltip-arrow {
+  &.#{$class-prefix}-left .#{$class-prefix}-tooltip-arrow {
     top: 50%;
     right: 0;
     margin-top: -$tooltip-arrow-width;
     border-width: $tooltip-arrow-width 0 $tooltip-arrow-width $tooltip-arrow-width;
     border-left-color: $tooltip-arrow-color;
   }
-  &.bottom .tooltip-arrow {
+  &.#{$class-prefix}-bottom .#{$class-prefix}-tooltip-arrow {
     top: 0;
     left: 50%;
     margin-left: -$tooltip-arrow-width;
     border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
     border-bottom-color: $tooltip-arrow-color;
   }
-  &.bottom-left .tooltip-arrow {
+  &.#{$class-prefix}-bottom-left .#{$class-prefix}-tooltip-arrow {
     top: 0;
     right: $tooltip-arrow-width;
     margin-top: -$tooltip-arrow-width;
     border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
     border-bottom-color: $tooltip-arrow-color;
   }
-  &.bottom-right .tooltip-arrow {
+  &.#{$class-prefix}-bottom-right .#{$class-prefix}-tooltip-arrow {
     top: 0;
     left: $tooltip-arrow-width;
     margin-top: -$tooltip-arrow-width;
