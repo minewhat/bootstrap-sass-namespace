@@ -1,3 +1,5 @@
+# Bootstrap for Sass with namespace
+
 # Bootstrap for Sass
 [![Gem Version](https://badge.fury.io/rb/bootstrap-sass.svg)](http://badge.fury.io/rb/bootstrap-sass)
 [![npm version](https://img.shields.io/npm/v/bootstrap-sass.svg?style=flat)](https://www.npmjs.com/package/bootstrap-sass)
