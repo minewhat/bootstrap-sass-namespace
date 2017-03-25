@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-sass-namespace",
-  "version": "3.3.7-alpha.2",
+  "version": "3.3.7-alpha.3",
   "description": "bootstrap-sass-namespace is a fork of bootstrap-sass with namespace added",
   "main": "assets/javascripts/bootstrap.js",
   "style": "assets/stylesheets/_bootstrap.scss",
