@@ -13,11 +13,13 @@
   // SCROLLSPY CLASS DEFINITION
   // ==========================
 
+  var classPrefix = BOOTSTRAP_NAMESPACE || 'z';
+
   function ScrollSpy(element, options) {
     this.$body          = $(document.body)
     this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
     this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
-    this.selector       = (this.options.target || '') + ' .nav li > a'
+    this.selector       = (this.options.target || '') + ' .nav .' + classPrefix + '-tag-li > .' + classPrefix + '-tag-a'
     this.offsets        = []
     this.targets        = []
     this.activeTarget   = null
@@ -112,12 +114,12 @@
 
     var active = $(selector)
       .parents('li')
-      .addClass('active')
+      .addClass(classPrefix + '-active')
 
-    if (active.parent('.dropdown-menu').length) {
+    if (active.parent('.' + classPrefix + '-dropdown-menu').length) {
       active = active
         .closest('li.dropdown')
-        .addClass('active')
+        .addClass(classPrefix + '-active')
     }
 
     active.trigger('activate.bs.scrollspy')
@@ -125,8 +127,8 @@
 
   ScrollSpy.prototype.clear = function () {
     $(this.selector)
-      .parentsUntil(this.options.target, '.active')
-      .removeClass('active')
+      .parentsUntil(this.options.target, '.' + classPrefix + '-active')
+      .removeClass(classPrefix + '-active')
   }
 
 

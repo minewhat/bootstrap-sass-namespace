@@ -14,6 +14,8 @@
   // COLLAPSE PUBLIC CLASS DEFINITION
   // ================================
 
+  var classPrefix = BOOTSTRAP_NAMESPACE || 'z';
+
   var Collapse = function (element, options) {
     this.$element      = $(element)
     this.options       = $.extend({}, Collapse.DEFAULTS, options)
@@ -39,15 +41,15 @@
   }
 
   Collapse.prototype.dimension = function () {
-    var hasWidth = this.$element.hasClass('width')
+    var hasWidth = this.$element.hasClass(classPrefix + '-width')
     return hasWidth ? 'width' : 'height'
   }
 
   Collapse.prototype.show = function () {
-    if (this.transitioning || this.$element.hasClass('in')) return
+    if (this.transitioning || this.$element.hasClass(classPrefix + '-in')) return
 
     var activesData
-    var actives = this.$parent && this.$parent.children('.panel').children('.in, .collapsing')
+    var actives = this.$parent && this.$parent.children('.' + classPrefix + '-panel').children('.' + classPrefix + '-in, .' + classPrefix + '-collapsing')
 
     if (actives && actives.length) {
       activesData = actives.data('bs.collapse')
@@ -66,20 +68,20 @@
     var dimension = this.dimension()
 
     this.$element
-      .removeClass('collapse')
-      .addClass('collapsing')[dimension](0)
+      .removeClass(classPrefix + '-collapse')
+      .addClass(classPrefix + '-collapsing')[dimension](0)
       .attr('aria-expanded', true)
 
     this.$trigger
-      .removeClass('collapsed')
+      .removeClass(classPrefix + '-collapsed')
       .attr('aria-expanded', true)
 
     this.transitioning = 1
 
     var complete = function () {
       this.$element
-        .removeClass('collapsing')
-        .addClass('collapse in')[dimension]('')
+        .removeClass(classPrefix + '-collapsing')
+        .addClass(classPrefix + '-collapse in')[dimension]('')
       this.transitioning = 0
       this.$element
         .trigger('shown.bs.collapse')
@@ -95,7 +97,7 @@
   }
 
   Collapse.prototype.hide = function () {
-    if (this.transitioning || !this.$element.hasClass('in')) return
+    if (this.transitioning || !this.$element.hasClass(classPrefix + '-in')) return
 
     var startEvent = $.Event('hide.bs.collapse')
     this.$element.trigger(startEvent)
@@ -106,12 +108,12 @@
     this.$element[dimension](this.$element[dimension]())[0].offsetHeight
 
     this.$element
-      .addClass('collapsing')
-      .removeClass('collapse in')
+      .addClass(classPrefix + '-collapsing')
+      .removeClass(classPrefix + '-collapse in')
       .attr('aria-expanded', false)
 
     this.$trigger
-      .addClass('collapsed')
+      .addClass(classPrefix + '-collapsed')
       .attr('aria-expanded', false)
 
     this.transitioning = 1
@@ -119,8 +121,8 @@
     var complete = function () {
       this.transitioning = 0
       this.$element
-        .removeClass('collapsing')
-        .addClass('collapse')
+        .removeClass(classPrefix + '-collapsing')
+        .addClass(classPrefix + '-collapse')
         .trigger('hidden.bs.collapse')
     }
 
@@ -133,7 +135,7 @@
   }
 
   Collapse.prototype.toggle = function () {
-    this[this.$element.hasClass('in') ? 'hide' : 'show']()
+    this[this.$element.hasClass(classPrefix + '-in') ? 'hide' : 'show']()
   }
 
   Collapse.prototype.getParent = function () {
@@ -147,11 +149,11 @@
   }
 
   Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
-    var isOpen = $element.hasClass('in')
+    var isOpen = $element.hasClass(classPrefix + '-in')
 
     $element.attr('aria-expanded', isOpen)
     $trigger
-      .toggleClass('collapsed', !isOpen)
+      .toggleClass(classPrefix + '-collapsed', !isOpen)
       .attr('aria-expanded', isOpen)
   }
 

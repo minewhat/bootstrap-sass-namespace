@@ -13,6 +13,8 @@
   // AFFIX CLASS DEFINITION
   // ======================
 
+  var classPrefix = BOOTSTRAP_NAMESPACE || 'z';
+
   var Affix = function (element, options) {
     this.options = $.extend({}, Affix.DEFAULTS, options)
 
@@ -61,7 +63,7 @@
 
   Affix.prototype.getPinnedOffset = function () {
     if (this.pinnedOffset) return this.pinnedOffset
-    this.$element.removeClass(Affix.RESET).addClass('affix')
+    this.$element.removeClass(Affix.RESET).addClass(classPrefix + '-affix')
     var scrollTop = this.$target.scrollTop()
     var position  = this.$element.offset()
     return (this.pinnedOffset = position.top - scrollTop)

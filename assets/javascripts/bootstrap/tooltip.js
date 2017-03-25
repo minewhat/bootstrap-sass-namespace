@@ -14,6 +14,8 @@
   // TOOLTIP PUBLIC CLASS DEFINITION
   // ===============================
 
+  var classPrefix = BOOTSTRAP_NAMESPACE || 'z';
+
   var Tooltip = function (element, options) {
     this.type       = null
     this.options    = null
@@ -120,7 +122,7 @@
       self.inState[obj.type == 'focusin' ? 'focus' : 'hover'] = true
     }
 
-    if (self.tip().hasClass('in') || self.hoverState == 'in') {
+    if (self.tip().hasClass(classPrefix + '-in') || self.hoverState == 'in') {
       self.hoverState = 'in'
       return
     }
@@ -188,7 +190,7 @@
       $tip.attr('id', tipId)
       this.$element.attr('aria-describedby', tipId)
 
-      if (this.options.animation) $tip.addClass('fade')
+      if (this.options.animation) $tip.addClass(classPrefix + '-fade')
 
       var placement = typeof this.options.placement == 'function' ?
         this.options.placement.call(this, $tip[0], this.$element[0]) :
@@ -238,7 +240,7 @@
         if (prevHoverState == 'out') that.leave(that)
       }
 
-      $.support.transition && this.$tip.hasClass('fade') ?
+      $.support.transition && this.$tip.hasClass(classPrefix + '-fade') ?
         $tip
           .one('bsTransitionEnd', complete)
           .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
@@ -273,7 +275,7 @@
       }
     }, offset), 0)
 
-    $tip.addClass('in')
+    $tip.addClass(classPrefix + '-in')
 
     // check to see if placing tip in new offset caused the tip to resize itself
     var actualWidth  = $tip[0].offsetWidth
@@ -306,8 +308,8 @@
     var $tip  = this.tip()
     var title = this.getTitle()
 
-    $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
-    $tip.removeClass('fade in top bottom left right')
+    $tip.find('.' + classPrefix + '-tooltip-inner')[this.options.html ? 'html' : 'text'](title)
+    $tip.removeClass(classPrefix + '-fade in top bottom left right')
   }
 
   Tooltip.prototype.hide = function (callback) {
@@ -329,9 +331,9 @@
 
     if (e.isDefaultPrevented()) return
 
-    $tip.removeClass('in')
+    $tip.removeClass(classPrefix + '-in')
 
-    $.support.transition && $tip.hasClass('fade') ?
+    $.support.transition && $tip.hasClass(classPrefix + '-fade') ?
       $tip
         .one('bsTransitionEnd', complete)
         .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
@@ -438,7 +440,7 @@
   }
 
   Tooltip.prototype.arrow = function () {
-    return (this.$arrow = this.$arrow || this.tip().find('.tooltip-arrow'))
+    return (this.$arrow = this.$arrow || this.tip().find('.' + classPrefix + '-tooltip-arrow'))
   }
 
   Tooltip.prototype.enable = function () {
@@ -468,7 +470,7 @@
       if (self.isInStateTrue()) self.enter(self)
       else self.leave(self)
     } else {
-      self.tip().hasClass('in') ? self.leave(self) : self.enter(self)
+      self.tip().hasClass(classPrefix + '-in') ? self.leave(self) : self.enter(self)
     }
   }
 

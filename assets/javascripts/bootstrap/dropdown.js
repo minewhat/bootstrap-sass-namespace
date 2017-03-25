@@ -13,6 +13,8 @@
   // DROPDOWN CLASS DEFINITION
   // =========================
 
+  var classPrefix = BOOTSTRAP_NAMESPACE || 'z';
+
   var backdrop = '.dropdown-backdrop'
   var toggle   = '[data-toggle="dropdown"]'
   var Dropdown = function (element) {
@@ -42,7 +44,7 @@
       var $parent       = getParent($this)
       var relatedTarget = { relatedTarget: this }
 
-      if (!$parent.hasClass('open')) return
+      if (!$parent.hasClass(classPrefix + '-open')) return
 
       if (e && e.type == 'click' && /input|textarea/i.test(e.target.tagName) && $.contains($parent[0], e.target)) return
 
@@ -51,25 +53,25 @@
       if (e.isDefaultPrevented()) return
 
       $this.attr('aria-expanded', 'false')
-      $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
+      $parent.removeClass(classPrefix + '-open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
     })
   }
 
   Dropdown.prototype.toggle = function (e) {
     var $this = $(this)
 
-    if ($this.is('.disabled, :disabled')) return
+    if ($this.is('.' + classPrefix + '-disabled, :disabled')) return
 
     var $parent  = getParent($this)
-    var isActive = $parent.hasClass('open')
+    var isActive = $parent.hasClass(classPrefix + '-open')
 
     clearMenus()
 
     if (!isActive) {
-      if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
+      if ('ontouchstart' in document.documentElement && !$parent.closest('.' + classPrefix + '-navbar-nav').length) {
         // if mobile we use a backdrop because click events don't delegate
         $(document.createElement('div'))
-          .addClass('dropdown-backdrop')
+          .addClass(classPrefix + '-dropdown-backdrop')
           .insertAfter($(this))
           .on('click', clearMenus)
       }
@@ -84,7 +86,7 @@
         .attr('aria-expanded', 'true')
 
       $parent
-        .toggleClass('open')
+        .toggleClass(classPrefix + '-open')
         .trigger($.Event('shown.bs.dropdown', relatedTarget))
     }
 
@@ -99,18 +101,18 @@
     e.preventDefault()
     e.stopPropagation()
 
-    if ($this.is('.disabled, :disabled')) return
+    if ($this.is('.' + classPrefix + '-disabled, :disabled')) return
 
     var $parent  = getParent($this)
-    var isActive = $parent.hasClass('open')
+    var isActive = $parent.hasClass(classPrefix + '-open')
 
     if (!isActive && e.which != 27 || isActive && e.which == 27) {
       if (e.which == 27) $parent.find(toggle).trigger('focus')
       return $this.trigger('click')
     }
 
-    var desc = ' li:not(.disabled):visible a'
-    var $items = $parent.find('.dropdown-menu' + desc)
+    var desc = ' .' + classPrefix + '-tag-li:not(.' + classPrefix + '-disabled):visible .' + classPrefix + '-tag-a'
+    var $items = $parent.find('.' + classPrefix + '-dropdown-menu' + desc)
 
     if (!$items.length) return
 
@@ -157,9 +159,9 @@
 
   $(document)
     .on('click.bs.dropdown.data-api', clearMenus)
-    .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
+    .on('click.bs.dropdown.data-api', '.' + classPrefix + '-dropdown form', function (e) { e.stopPropagation() })
     .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
     .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
-    .on('keydown.bs.dropdown.data-api', '.dropdown-menu', Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', '.' + classPrefix + '-dropdown-menu', Dropdown.prototype.keydown)
 
 }(jQuery);

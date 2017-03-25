@@ -13,6 +13,8 @@
   // TAB CLASS DEFINITION
   // ====================
 
+  var classPrefix = BOOTSTRAP_NAMESPACE || 'z';
+
   var Tab = function (element) {
     // jscs:disable requireDollarBeforejQueryAssignment
     this.element = $(element)
@@ -33,9 +35,9 @@
       selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 
-    if ($this.parent('li').hasClass('active')) return
+    if ($this.parent('li').hasClass(classPrefix + '-active')) return
 
-    var $previous = $ul.find('.active:last a')
+    var $previous = $ul.find('.' + classPrefix + '-active:last a')
     var hideEvent = $.Event('hide.bs.tab', {
       relatedTarget: $this[0]
     })
@@ -67,33 +69,33 @@
     var $active    = container.find('> .active')
     var transition = callback
       && $.support.transition
-      && ($active.length && $active.hasClass('fade') || !!container.find('> .fade').length)
+      && ($active.length && $active.hasClass(classPrefix + '-fade') || !!container.find('> .fade').length)
 
     function next() {
       $active
-        .removeClass('active')
+        .removeClass(classPrefix + '-active')
         .find('> .dropdown-menu > .active')
-          .removeClass('active')
+          .removeClass(classPrefix + '-active')
         .end()
         .find('[data-toggle="tab"]')
           .attr('aria-expanded', false)
 
       element
-        .addClass('active')
+        .addClass(classPrefix + '-active')
         .find('[data-toggle="tab"]')
           .attr('aria-expanded', true)
 
       if (transition) {
         element[0].offsetWidth // reflow for transition
-        element.addClass('in')
+        element.addClass(classPrefix + '-in')
       } else {
-        element.removeClass('fade')
+        element.removeClass(classPrefix + '-fade')
       }
 
-      if (element.parent('.dropdown-menu').length) {
+      if (element.parent('.' + classPrefix + '-dropdown-menu').length) {
         element
           .closest('li.dropdown')
-            .addClass('active')
+            .addClass(classPrefix + '-active')
           .end()
           .find('[data-toggle="tab"]')
             .attr('aria-expanded', true)
@@ -108,7 +110,7 @@
         .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
       next()
 
-    $active.removeClass('in')
+    $active.removeClass(classPrefix + '-in')
   }
 
 

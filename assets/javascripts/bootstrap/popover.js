@@ -13,6 +13,8 @@
   // POPOVER PUBLIC CLASS DEFINITION
   // ===============================
 
+  var classPrefix = BOOTSTRAP_NAMESPACE || 'z';
+
   var Popover = function (element, options) {
     this.init('popover', element, options)
   }
@@ -45,16 +47,16 @@
     var title   = this.getTitle()
     var content = this.getContent()
 
-    $tip.find('.popover-title')[this.options.html ? 'html' : 'text'](title)
-    $tip.find('.popover-content').children().detach().end()[ // we use append for html objects to maintain js events
+    $tip.find('.' + classPrefix + '-popover-title')[this.options.html ? 'html' : 'text'](title)
+    $tip.find('.' + classPrefix + '-popover-content').children().detach().end()[ // we use append for html objects to maintain js events
       this.options.html ? (typeof content == 'string' ? 'html' : 'append') : 'text'
     ](content)
 
-    $tip.removeClass('fade top bottom left right in')
+    $tip.removeClass(classPrefix + '-fade top bottom left right in')
 
     // IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
     // this manually by checking the contents.
-    if (!$tip.find('.popover-title').html()) $tip.find('.popover-title').hide()
+    if (!$tip.find('.' + classPrefix + '-popover-title').html()) $tip.find('.' + classPrefix + '-popover-title').hide()
   }
 
   Popover.prototype.hasContent = function () {
@@ -72,7 +74,7 @@
   }
 
   Popover.prototype.arrow = function () {
-    return (this.$arrow = this.$arrow || this.tip().find('.arrow'))
+    return (this.$arrow = this.$arrow || this.tip().find('.' + classPrefix + '-arrow'))
   }
 
 

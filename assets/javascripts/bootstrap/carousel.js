@@ -13,9 +13,11 @@
   // CAROUSEL CLASS DEFINITION
   // =========================
 
+  var classPrefix = BOOTSTRAP_NAMESPACE || 'z';
+
   var Carousel = function (element, options) {
     this.$element    = $(element)
-    this.$indicators = this.$element.find('.carousel-indicators')
+    this.$indicators = this.$element.find('.' + classPrefix + '-carousel-indicators')
     this.options     = options
     this.paused      = null
     this.sliding     = null
@@ -65,7 +67,7 @@
   }
 
   Carousel.prototype.getItemIndex = function (item) {
-    this.$items = item.parent().children('.item')
+    this.$items = item.parent().children('.' + classPrefix + '-item')
     return this.$items.index(item || this.$active)
   }
 
@@ -81,7 +83,7 @@
 
   Carousel.prototype.to = function (pos) {
     var that        = this
-    var activeIndex = this.getItemIndex(this.$active = this.$element.find('.item.active'))
+    var activeIndex = this.getItemIndex(this.$active = this.$element.find('.' + classPrefix + '-item.' + classPrefix + '-active'))
 
     if (pos > (this.$items.length - 1) || pos < 0) return
 
@@ -94,7 +96,7 @@
   Carousel.prototype.pause = function (e) {
     e || (this.paused = true)
 
-    if (this.$element.find('.next, .prev').length && $.support.transition) {
+    if (this.$element.find('.' + classPrefix + '-next, .' + classPrefix + '-prev').length && $.support.transition) {
       this.$element.trigger($.support.transition.end)
       this.cycle(true)
     }
@@ -115,13 +117,13 @@
   }
 
   Carousel.prototype.slide = function (type, next) {
-    var $active   = this.$element.find('.item.active')
+    var $active   = this.$element.find('.' + classPrefix + '-item.' + classPrefix + '-active')
     var $next     = next || this.getItemForDirection(type, $active)
     var isCycling = this.interval
     var direction = type == 'next' ? 'left' : 'right'
     var that      = this
 
-    if ($next.hasClass('active')) return (this.sliding = false)
+    if ($next.hasClass(classPrefix + '-active')) return (this.sliding = false)
 
     var relatedTarget = $next[0]
     var slideEvent = $.Event('slide.bs.carousel', {
@@ -136,21 +138,21 @@
     isCycling && this.pause()
 
     if (this.$indicators.length) {
-      this.$indicators.find('.active').removeClass('active')
+      this.$indicators.find('.' + classPrefix + '-active').removeClass(classPrefix + '-active')
       var $nextIndicator = $(this.$indicators.children()[this.getItemIndex($next)])
-      $nextIndicator && $nextIndicator.addClass('active')
+      $nextIndicator && $nextIndicator.addClass(classPrefix + '-active')
     }
 
     var slidEvent = $.Event('slid.bs.carousel', { relatedTarget: relatedTarget, direction: direction }) // yes, "slid"
-    if ($.support.transition && this.$element.hasClass('slide')) {
+    if ($.support.transition && this.$element.hasClass(classPrefix + '-slide')) {
       $next.addClass(type)
       $next[0].offsetWidth // force reflow
       $active.addClass(direction)
       $next.addClass(direction)
       $active
         .one('bsTransitionEnd', function () {
-          $next.removeClass([type, direction].join(' ')).addClass('active')
-          $active.removeClass(['active', direction].join(' '))
+          $next.removeClass([type, direction].join(' ')).addClass(classPrefix + '-active')
+          $active.removeClass([classPrefix + '-active', direction].join(' '))
           that.sliding = false
           setTimeout(function () {
             that.$element.trigger(slidEvent)
@@ -158,8 +160,8 @@
         })
         .emulateTransitionEnd(Carousel.TRANSITION_DURATION)
     } else {
-      $active.removeClass('active')
-      $next.addClass('active')
+      $active.removeClass(classPrefix + '-active')
+      $next.addClass(classPrefix + '-active')
       this.sliding = false
       this.$element.trigger(slidEvent)
     }
@@ -209,7 +211,7 @@
     var href
     var $this   = $(this)
     var $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) // strip for ie7
-    if (!$target.hasClass('carousel')) return
+    if (!$target.hasClass(classPrefix + '-carousel')) return
     var options = $.extend({}, $target.data(), $this.data())
     var slideIndex = $this.attr('data-slide-to')
     if (slideIndex) options.interval = false

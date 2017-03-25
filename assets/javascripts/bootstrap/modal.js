@@ -13,11 +13,13 @@
   // MODAL CLASS DEFINITION
   // ======================
 
+  var classPrefix = BOOTSTRAP_NAMESPACE || 'z';
+
   var Modal = function (element, options) {
     this.options             = options
     this.$body               = $(document.body)
     this.$element            = $(element)
-    this.$dialog             = this.$element.find('.modal-dialog')
+    this.$dialog             = this.$element.find('.' + classPrefix + '-modal-dialog')
     this.$backdrop           = null
     this.isShown             = null
     this.originalBodyPad     = null
@@ -26,7 +28,7 @@
 
     if (this.options.remote) {
       this.$element
-        .find('.modal-content')
+        .find('.' + classPrefix + '-modal-content')
         .load(this.options.remote, $.proxy(function () {
           this.$element.trigger('loaded.bs.modal')
         }, this))
@@ -60,7 +62,7 @@
 
     this.checkScrollbar()
     this.setScrollbar()
-    this.$body.addClass('modal-open')
+    this.$body.addClass(classPrefix + '-modal-open')
 
     this.escape()
     this.resize()
@@ -74,7 +76,7 @@
     })
 
     this.backdrop(function () {
-      var transition = $.support.transition && that.$element.hasClass('fade')
+      var transition = $.support.transition && that.$element.hasClass(classPrefix + '-fade')
 
       if (!that.$element.parent().length) {
         that.$element.appendTo(that.$body) // don't move modals dom position
@@ -90,7 +92,7 @@
         that.$element[0].offsetWidth // force reflow
       }
 
-      that.$element.addClass('in')
+      that.$element.addClass(classPrefix + '-in')
 
       that.enforceFocus()
 
@@ -123,13 +125,13 @@
     $(document).off('focusin.bs.modal')
 
     this.$element
-      .removeClass('in')
+      .removeClass(classPrefix + '-in')
       .off('click.dismiss.bs.modal')
       .off('mouseup.dismiss.bs.modal')
 
     this.$dialog.off('mousedown.dismiss.bs.modal')
 
-    $.support.transition && this.$element.hasClass('fade') ?
+    $.support.transition && this.$element.hasClass(classPrefix + '-fade') ?
       this.$element
         .one('bsTransitionEnd', $.proxy(this.hideModal, this))
         .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
@@ -170,7 +172,7 @@
     var that = this
     this.$element.hide()
     this.backdrop(function () {
-      that.$body.removeClass('modal-open')
+      that.$body.removeClass(classPrefix + '-modal-open')
       that.resetAdjustments()
       that.resetScrollbar()
       that.$element.trigger('hidden.bs.modal')
@@ -184,13 +186,13 @@
 
   Modal.prototype.backdrop = function (callback) {
     var that = this
-    var animate = this.$element.hasClass('fade') ? 'fade' : ''
+    var animate = this.$element.hasClass(classPrefix + '-fade') ? 'fade' : ''
 
     if (this.isShown && this.options.backdrop) {
       var doAnimate = $.support.transition && animate
 
       this.$backdrop = $(document.createElement('div'))
-        .addClass('modal-backdrop ' + animate)
+        .addClass(classPrefix + '-modal-backdrop ' + animate)
         .appendTo(this.$body)
 
       this.$element.on('click.dismiss.bs.modal', $.proxy(function (e) {
@@ -206,7 +208,7 @@
 
       if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
 
-      this.$backdrop.addClass('in')
+      this.$backdrop.addClass(classPrefix + '-in')
 
       if (!callback) return
 
@@ -217,13 +219,13 @@
         callback()
 
     } else if (!this.isShown && this.$backdrop) {
-      this.$backdrop.removeClass('in')
+      this.$backdrop.removeClass(classPrefix + '-in')
 
       var callbackRemove = function () {
         that.removeBackdrop()
         callback && callback()
       }
-      $.support.transition && this.$element.hasClass('fade') ?
+      $.support.transition && this.$element.hasClass(classPrefix + '-fade') ?
         this.$backdrop
           .one('bsTransitionEnd', callbackRemove)
           .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :

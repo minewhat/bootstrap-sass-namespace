@@ -13,6 +13,8 @@
   // BUTTON PUBLIC CLASS DEFINITION
   // ==============================
 
+  var classPrefix = BOOTSTRAP_NAMESPACE || 'z';
+
   var Button = function (element, options) {
     this.$element  = $(element)
     this.options   = $.extend({}, Button.DEFAULTS, options)
@@ -54,20 +56,20 @@
     var $parent = this.$element.closest('[data-toggle="buttons"]')
 
     if ($parent.length) {
-      var $input = this.$element.find('input')
+      var $input = this.$element.find('.' + classPrefix + '-tag-input')
       if ($input.prop('type') == 'radio') {
         if ($input.prop('checked')) changed = false
-        $parent.find('.active').removeClass('active')
-        this.$element.addClass('active')
+        $parent.find('.' + classPrefix + '-active').removeClass(classPrefix + '-active')
+        this.$element.addClass(classPrefix + '-active')
       } else if ($input.prop('type') == 'checkbox') {
-        if (($input.prop('checked')) !== this.$element.hasClass('active')) changed = false
-        this.$element.toggleClass('active')
+        if (($input.prop('checked')) !== this.$element.hasClass(classPrefix + '-active')) changed = false
+        this.$element.toggleClass(classPrefix + '-active')
       }
-      $input.prop('checked', this.$element.hasClass('active'))
+      $input.prop('checked', this.$element.hasClass(classPrefix + '-active'))
       if (changed) $input.trigger('change')
     } else {
-      this.$element.attr('aria-pressed', !this.$element.hasClass('active'))
-      this.$element.toggleClass('active')
+      this.$element.attr('aria-pressed', !this.$element.hasClass(classPrefix + '-active'))
+      this.$element.toggleClass(classPrefix + '-active')
     }
   }
 
@@ -108,18 +110,18 @@
 
   $(document)
     .on('click.bs.button.data-api', '[data-toggle^="button"]', function (e) {
-      var $btn = $(e.target).closest('.btn')
+      var $btn = $(e.target).closest('.' + classPrefix + '-btn')
       Plugin.call($btn, 'toggle')
-      if (!($(e.target).is('input[type="radio"], input[type="checkbox"]'))) {
+      if (!($(e.target).is('.' + classPrefix + '-tag-input[type="radio"], .' + classPrefix + '-tag-input[type="checkbox"]'))) {
         // Prevent double click on radios, and the double selections (so cancellation) on checkboxes
         e.preventDefault()
         // The target component still receive the focus
-        if ($btn.is('input,button')) $btn.trigger('focus')
-        else $btn.find('input:visible,button:visible').first().trigger('focus')
+        if ($btn.is('.' + classPrefix + '-tag-input,.' + classPrefix + '-tag-button')) $btn.trigger('focus')
+        else $btn.find('.' + classPrefix + '-tag-input:visible,.' + classPrefix + '-tag-button:visible').first().trigger('focus')
       }
     })
     .on('focus.bs.button.data-api blur.bs.button.data-api', '[data-toggle^="button"]', function (e) {
-      $(e.target).closest('.btn').toggleClass('focus', /^focus(in)?$/.test(e.type))
+      $(e.target).closest('.' + classPrefix + '-btn').toggleClass(classPrefix + '-focus', /^focus(in)?$/.test(e.type))
     })
 
 }(jQuery);
