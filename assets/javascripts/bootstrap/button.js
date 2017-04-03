@@ -30,7 +30,7 @@
   Button.prototype.setState = function (state) {
     var d    = 'disabled'
     var $el  = this.$element
-    var val  = $el.is('input') ? 'val' : 'html'
+    var val  = $el.is('.' + classPrefix + '-tag-input') ? 'val' : 'html'
     var data = $el.data()
 
     state += 'Text'

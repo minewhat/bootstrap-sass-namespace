@@ -113,12 +113,12 @@
       this.selector + '[href="' + target + '"]'
 
     var active = $(selector)
-      .parents('li')
+      .parents('.' + classPrefix + '-tag-li')
       .addClass(classPrefix + '-active')
 
     if (active.parent('.' + classPrefix + '-dropdown-menu').length) {
       active = active
-        .closest('li.dropdown')
+        .closest('.' + classPrefix + '-tag-li.' + classPrefix + '-dropdown')
         .addClass(classPrefix + '-active')
     }
 
