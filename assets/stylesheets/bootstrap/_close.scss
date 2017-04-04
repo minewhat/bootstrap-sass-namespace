@@ -27,7 +27,7 @@
 // iOS requires the button element instead of an anchor tag.
 // If you want the anchor version, it requires `href="#"`.
 // See https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
-.#{$class-prefix}-tag-button.#{$class-prefix}-close {
+.#{$class-prefix}-html-button.#{$class-prefix}-close {
   padding: 0;
   cursor: pointer;
   background: transparent;

@@ -19,12 +19,12 @@
 
 // Body reset
 
-.#{$class-prefix}-tag-html {
+.#{$class-prefix}-html-html {
   font-size: 10px;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-.#{$class-prefix}-tag-body {
+.#{$class-prefix}-html-body {
   font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: $line-height-base;
@@ -33,10 +33,10 @@
 }
 
 // Reset fonts for relevant elements
-.#{$class-prefix}-tag-input,
-.#{$class-prefix}-tag-button,
-.#{$class-prefix}-tag-select,
-.#{$class-prefix}-tag-textarea {
+.#{$class-prefix}-html-input,
+.#{$class-prefix}-html-button,
+.#{$class-prefix}-html-select,
+.#{$class-prefix}-html-textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -45,7 +45,7 @@
 
 // Links
 
-.#{$class-prefix}-tag-a {
+.#{$class-prefix}-html-a {
   color: $link-color;
   text-decoration: none;
 
@@ -66,14 +66,14 @@
 // We reset this here because previously Normalize had no `figure` margins. This
 // ensures we don't break anyone's use of the element.
 
-.#{$class-prefix}-tag-figure {
+.#{$class-prefix}-html-figure {
   margin: 0;
 }
 
 
 // Images
 
-.#{$class-prefix}-tag-img {
+.#{$class-prefix}-html-img {
   vertical-align: middle;
 }
 
@@ -110,7 +110,7 @@
 
 // Horizontal rules
 
-.#{$class-prefix}-tag-hr {
+.#{$class-prefix}-html-hr {
   margin-top:    $line-height-computed;
   margin-bottom: $line-height-computed;
   border: 0;

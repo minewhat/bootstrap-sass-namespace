@@ -202,7 +202,7 @@ if (typeof jQuery === 'undefined') {
   Button.prototype.setState = function (state) {
     var d    = 'disabled'
     var $el  = this.$element
-    var val  = $el.is('.' + classPrefix + '-tag-input') ? 'val' : 'html'
+    var val  = $el.is('.' + classPrefix + '-html-input') ? 'val' : 'html'
     var data = $el.data()
 
     state += 'Text'
@@ -228,7 +228,7 @@ if (typeof jQuery === 'undefined') {
     var $parent = this.$element.closest('[data-toggle="buttons"]')
 
     if ($parent.length) {
-      var $input = this.$element.find('.' + classPrefix + '-tag-input')
+      var $input = this.$element.find('.' + classPrefix + '-html-input')
       if ($input.prop('type') == 'radio') {
         if ($input.prop('checked')) changed = false
         $parent.find('.' + classPrefix + '-active').removeClass(classPrefix + '-active')
@@ -284,12 +284,12 @@ if (typeof jQuery === 'undefined') {
     .on('click.bs.button.data-api', '[data-toggle^="button"]', function (e) {
       var $btn = $(e.target).closest('.' + classPrefix + '-btn')
       Plugin.call($btn, 'toggle')
-      if (!($(e.target).is('.' + classPrefix + '-tag-input[type="radio"], .' + classPrefix + '-tag-input[type="checkbox"]'))) {
+      if (!($(e.target).is('.' + classPrefix + '-html-input[type="radio"], .' + classPrefix + '-html-input[type="checkbox"]'))) {
         // Prevent double click on radios, and the double selections (so cancellation) on checkboxes
         e.preventDefault()
         // The target component still receive the focus
-        if ($btn.is('.' + classPrefix + '-tag-input,.' + classPrefix + '-tag-button')) $btn.trigger('focus')
-        else $btn.find('.' + classPrefix + '-tag-input:visible,.' + classPrefix + '-tag-button:visible').first().trigger('focus')
+        if ($btn.is('.' + classPrefix + '-html-input,.' + classPrefix + '-html-button')) $btn.trigger('focus')
+        else $btn.find('.' + classPrefix + '-html-input:visible,.' + classPrefix + '-html-button:visible').first().trigger('focus')
       }
     })
     .on('focus.bs.button.data-api blur.bs.button.data-api', '[data-toggle^="button"]', function (e) {
@@ -863,7 +863,7 @@ if (typeof jQuery === 'undefined') {
       return $this.trigger('click')
     }
 
-    var desc = ' .' + classPrefix + '-tag-li:not(.' + classPrefix + '-disabled):visible .' + classPrefix + '-tag-a'
+    var desc = ' .' + classPrefix + '-html-li:not(.' + classPrefix + '-disabled):visible .' + classPrefix + '-html-a'
     var $items = $parent.find('.' + classPrefix + '-dropdown-menu' + desc)
 
     if (!$items.length) return
@@ -1911,7 +1911,7 @@ if (typeof jQuery === 'undefined') {
     this.$body          = $(document.body)
     this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
     this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
-    this.selector       = (this.options.target || '') + ' .nav .' + classPrefix + '-tag-li > .' + classPrefix + '-tag-a'
+    this.selector       = (this.options.target || '') + ' .nav .' + classPrefix + '-html-li > .' + classPrefix + '-html-a'
     this.offsets        = []
     this.targets        = []
     this.activeTarget   = null
@@ -2005,12 +2005,12 @@ if (typeof jQuery === 'undefined') {
       this.selector + '[href="' + target + '"]'
 
     var active = $(selector)
-      .parents('.' + classPrefix + '-tag-li')
+      .parents('.' + classPrefix + '-html-li')
       .addClass(classPrefix + '-active')
 
     if (active.parent('.' + classPrefix + '-dropdown-menu').length) {
       active = active
-        .closest('.' + classPrefix + '-tag-li.' + classPrefix + '-dropdown')
+        .closest('.' + classPrefix + '-html-li.' + classPrefix + '-dropdown')
         .addClass(classPrefix + '-active')
     }
 
@@ -2093,7 +2093,7 @@ if (typeof jQuery === 'undefined') {
 
   Tab.prototype.show = function () {
     var $this    = this.element
-    var $ul      = $this.closest('.' + classPrefix + '-tag-ul:not(.' + classPrefix + '-dropdown-menu)')
+    var $ul      = $this.closest('.' + classPrefix + '-html-ul:not(.' + classPrefix + '-dropdown-menu)')
     var selector = $this.data('target')
 
     if (!selector) {
@@ -2101,7 +2101,7 @@ if (typeof jQuery === 'undefined') {
       selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 
-    if ($this.parent('.' + classPrefix + '-tag-li').hasClass(classPrefix + '-active')) return
+    if ($this.parent('.' + classPrefix + '-html-li').hasClass(classPrefix + '-active')) return
 
     var $previous = $ul.find('.' + classPrefix + '-active:last a')
     var hideEvent = $.Event('hide.bs.tab', {
@@ -2118,7 +2118,7 @@ if (typeof jQuery === 'undefined') {
 
     var $target = $(selector)
 
-    this.activate($this.closest('.' + classPrefix + '-tag-li'), $ul)
+    this.activate($this.closest('.' + classPrefix + '-html-li'), $ul)
     this.activate($target, $target.parent(), function () {
       $previous.trigger({
         type: 'hidden.bs.tab',
@@ -2160,7 +2160,7 @@ if (typeof jQuery === 'undefined') {
 
       if (element.parent('.' + classPrefix + '-dropdown-menu').length) {
         element
-          .closest('.' + classPrefix + '-tag-li.dropdown')
+          .closest('.' + classPrefix + '-html-li.dropdown')
             .addClass(classPrefix + '-active')
           .end()
           .find('[data-toggle="tab"]')

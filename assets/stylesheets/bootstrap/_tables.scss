@@ -3,16 +3,16 @@
 // --------------------------------------------------
 
 
-.#{$class-prefix}-tag-table {
+.#{$class-prefix}-html-table {
   background-color: $table-bg;
 }
-.#{$class-prefix}-tag-caption {
+.#{$class-prefix}-html-caption {
   padding-top: $table-cell-padding;
   padding-bottom: $table-cell-padding;
   color: $text-muted;
   text-align: left;
 }
-.#{$class-prefix}-tag-th {
+.#{$class-prefix}-html-th {
   text-align: left;
 }
 
@@ -24,12 +24,12 @@
   max-width: 100%;
   margin-bottom: $line-height-computed;
   // Cells
-  > .#{$class-prefix}-tag-thead,
-  > .#{$class-prefix}-tag-tbody,
-  > .#{$class-prefix}-tag-tfoot {
-    > .#{$class-prefix}-tag-tr {
-      > .#{$class-prefix}-tag-th,
-      > .#{$class-prefix}-tag-td {
+  > .#{$class-prefix}-html-thead,
+  > .#{$class-prefix}-html-tbody,
+  > .#{$class-prefix}-html-tfoot {
+    > .#{$class-prefix}-html-tr {
+      > .#{$class-prefix}-html-th,
+      > .#{$class-prefix}-html-td {
         padding: $table-cell-padding;
         line-height: $line-height-base;
         vertical-align: top;
@@ -38,23 +38,23 @@
     }
   }
   // Bottom align for column headings
-  > .#{$class-prefix}-tag-thead > .#{$class-prefix}-tag-tr > .#{$class-prefix}-tag-th {
+  > .#{$class-prefix}-html-thead > .#{$class-prefix}-html-tr > .#{$class-prefix}-html-th {
     vertical-align: bottom;
     border-bottom: 2px solid $table-border-color;
   }
   // Remove top border from thead by default
-  > .#{$class-prefix}-tag-caption + .#{$class-prefix}-tag-thead,
-  > .#{$class-prefix}-tag-colgroup + .#{$class-prefix}-tag-thead,
-  > .#{$class-prefix}-tag-thead:first-child {
-    > .#{$class-prefix}-tag-tr:first-child {
-      > .#{$class-prefix}-tag-th,
-      > .#{$class-prefix}-tag-td {
+  > .#{$class-prefix}-html-caption + .#{$class-prefix}-html-thead,
+  > .#{$class-prefix}-html-colgroup + .#{$class-prefix}-html-thead,
+  > .#{$class-prefix}-html-thead:first-child {
+    > .#{$class-prefix}-html-tr:first-child {
+      > .#{$class-prefix}-html-th,
+      > .#{$class-prefix}-html-td {
         border-top: 0;
       }
     }
   }
   // Account for multiple tbody instances
-  > .#{$class-prefix}-tag-tbody + .#{$class-prefix}-tag-tbody {
+  > .#{$class-prefix}-html-tbody + .#{$class-prefix}-html-tbody {
     border-top: 2px solid $table-border-color;
   }
 
@@ -68,12 +68,12 @@
 // Condensed table w/ half padding
 
 .#{$class-prefix}-table-condensed {
-  > .#{$class-prefix}-tag-thead,
-  > .#{$class-prefix}-tag-tbody,
-  > .#{$class-prefix}-tag-tfoot {
-    > .#{$class-prefix}-tag-tr {
-      > .#{$class-prefix}-tag-th,
-      > .#{$class-prefix}-tag-td {
+  > .#{$class-prefix}-html-thead,
+  > .#{$class-prefix}-html-tbody,
+  > .#{$class-prefix}-html-tfoot {
+    > .#{$class-prefix}-html-tr {
+      > .#{$class-prefix}-html-th,
+      > .#{$class-prefix}-html-td {
         padding: $table-condensed-cell-padding;
       }
     }
@@ -87,19 +87,19 @@
 
 .#{$class-prefix}-table-bordered {
   border: 1px solid $table-border-color;
-  > .#{$class-prefix}-tag-thead,
-  > .#{$class-prefix}-tag-tbody,
-  > .#{$class-prefix}-tag-tfoot {
-    > .#{$class-prefix}-tag-tr {
-      > .#{$class-prefix}-tag-th,
-      > .#{$class-prefix}-tag-td {
+  > .#{$class-prefix}-html-thead,
+  > .#{$class-prefix}-html-tbody,
+  > .#{$class-prefix}-html-tfoot {
+    > .#{$class-prefix}-html-tr {
+      > .#{$class-prefix}-html-th,
+      > .#{$class-prefix}-html-td {
         border: 1px solid $table-border-color;
       }
     }
   }
-  > .#{$class-prefix}-tag-thead > .#{$class-prefix}-tag-tr {
-    > .#{$class-prefix}-tag-th,
-    > .#{$class-prefix}-tag-td {
+  > .#{$class-prefix}-html-thead > .#{$class-prefix}-html-tr {
+    > .#{$class-prefix}-html-th,
+    > .#{$class-prefix}-html-td {
       border-bottom-width: 2px;
     }
   }
@@ -111,7 +111,7 @@
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
 .#{$class-prefix}-table-striped {
-  > .#{$class-prefix}-tag-tbody > .#{$class-prefix}-tag-tr:nth-of-type(odd) {
+  > .#{$class-prefix}-html-tbody > .#{$class-prefix}-html-tr:nth-of-type(odd) {
     background-color: $table-bg-accent;
   }
 }
@@ -122,7 +122,7 @@
 // Placed here since it has to come after the potential zebra striping
 
 .#{$class-prefix}-table-hover {
-  > .#{$class-prefix}-tag-tbody > .#{$class-prefix}-tag-tr:hover {
+  > .#{$class-prefix}-html-tbody > .#{$class-prefix}-html-tr:hover {
     background-color: $table-bg-hover;
   }
 }
@@ -132,14 +132,14 @@
 //
 // Reset default table behavior
 
-.#{$class-prefix}-tag-table .#{$class-prefix}-tag-col[class*="col-"] {
+.#{$class-prefix}-html-table .#{$class-prefix}-html-col[class*="col-"] {
   position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
   float: none;
   display: table-column;
 }
-.#{$class-prefix}-tag-table {
-  .#{$class-prefix}-tag-td,
-  .#{$class-prefix}-tag-th {
+.#{$class-prefix}-html-table {
+  .#{$class-prefix}-html-td,
+  .#{$class-prefix}-html-th {
     &[class*="col-"] {
       position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
       float: none;
@@ -184,12 +184,12 @@
       margin-bottom: 0;
 
       // Ensure the content doesn't wrap
-      > .#{$class-prefix}-tag-thead,
-      > .#{$class-prefix}-tag-tbody,
-      > .#{$class-prefix}-tag-tfoot {
-        > .#{$class-prefix}-tag-tr {
-          > .#{$class-prefix}-tag-th,
-          > .#{$class-prefix}-tag-td {
+      > .#{$class-prefix}-html-thead,
+      > .#{$class-prefix}-html-tbody,
+      > .#{$class-prefix}-html-tfoot {
+        > .#{$class-prefix}-html-tr {
+          > .#{$class-prefix}-html-th,
+          > .#{$class-prefix}-html-td {
             white-space: nowrap;
           }
         }
@@ -201,16 +201,16 @@
       border: 0;
 
       // Nuke the appropriate borders so that the parent can handle them
-      > .#{$class-prefix}-tag-thead,
-      > .#{$class-prefix}-tag-tbody,
-      > .#{$class-prefix}-tag-tfoot {
-        > .#{$class-prefix}-tag-tr {
-          > .#{$class-prefix}-tag-th:first-child,
-          > .#{$class-prefix}-tag-td:first-child {
+      > .#{$class-prefix}-html-thead,
+      > .#{$class-prefix}-html-tbody,
+      > .#{$class-prefix}-html-tfoot {
+        > .#{$class-prefix}-html-tr {
+          > .#{$class-prefix}-html-th:first-child,
+          > .#{$class-prefix}-html-td:first-child {
             border-left: 0;
           }
-          > .#{$class-prefix}-tag-th:last-child,
-          > .#{$class-prefix}-tag-td:last-child {
+          > .#{$class-prefix}-html-th:last-child,
+          > .#{$class-prefix}-html-td:last-child {
             border-right: 0;
           }
         }
@@ -219,11 +219,11 @@
       // Only nuke the last row's bottom-border in `tbody` and `tfoot` since
       // chances are there will be only one `tr` in a `thead` and that would
       // remove the border altogether.
-      > .#{$class-prefix}-tag-tbody,
-      > .#{$class-prefix}-tag-tfoot {
-        > .#{$class-prefix}-tag-tr:last-child {
-          > .#{$class-prefix}-tag-th,
-          > .#{$class-prefix}-tag-td {
+      > .#{$class-prefix}-html-tbody,
+      > .#{$class-prefix}-html-tfoot {
+        > .#{$class-prefix}-html-tr:last-child {
+          > .#{$class-prefix}-html-th,
+          > .#{$class-prefix}-html-td {
             border-bottom: 0;
           }
         }

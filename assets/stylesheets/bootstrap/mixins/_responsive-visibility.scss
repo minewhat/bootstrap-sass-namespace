@@ -7,10 +7,10 @@
   #{$parent} {
     display: block !important;
   }
-  .#{$class-prefix}-tag-table#{$parent}  { display: table !important; }
-  .#{$class-prefix}-tag-tr#{$parent}     { display: table-row !important; }
-  .#{$class-prefix}-tag-th#{$parent},
-  .#{$class-prefix}-tag-td#{$parent}     { display: table-cell !important; }
+  .#{$class-prefix}-html-table#{$parent}  { display: table !important; }
+  .#{$class-prefix}-html-tr#{$parent}     { display: table-row !important; }
+  .#{$class-prefix}-html-th#{$parent},
+  .#{$class-prefix}-html-td#{$parent}     { display: table-cell !important; }
 }
 
 // [converter] $parent hack

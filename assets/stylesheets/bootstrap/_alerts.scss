@@ -13,7 +13,7 @@
   border-radius: $alert-border-radius;
 
   // Headings for larger alerts
-  .#{$class-prefix}-tag-h4 {
+  .#{$class-prefix}-html-h4 {
     margin-top: 0;
     // Specified for the h4 to prevent conflicts of changing $headings-color
     color: inherit;
@@ -25,12 +25,12 @@
   }
 
   // Improve alignment and spacing of inner content
-  > .#{$class-prefix}-tag-p,
-  > .#{$class-prefix}-tag-ul {
+  > .#{$class-prefix}-html-p,
+  > .#{$class-prefix}-html-ul {
     margin-bottom: 0;
   }
 
-  > .#{$class-prefix}-tag-p + .#{$class-prefix}-tag-p {
+  > .#{$class-prefix}-html-p + .#{$class-prefix}-html-p {
     margin-top: 5px;
   }
 }

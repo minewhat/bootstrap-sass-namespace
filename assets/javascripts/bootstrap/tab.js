@@ -27,7 +27,7 @@
 
   Tab.prototype.show = function () {
     var $this    = this.element
-    var $ul      = $this.closest('.' + classPrefix + '-tag-ul:not(.' + classPrefix + '-dropdown-menu)')
+    var $ul      = $this.closest('.' + classPrefix + '-html-ul:not(.' + classPrefix + '-dropdown-menu)')
     var selector = $this.data('target')
 
     if (!selector) {
@@ -35,7 +35,7 @@
       selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 
-    if ($this.parent('.' + classPrefix + '-tag-li').hasClass(classPrefix + '-active')) return
+    if ($this.parent('.' + classPrefix + '-html-li').hasClass(classPrefix + '-active')) return
 
     var $previous = $ul.find('.' + classPrefix + '-active:last a')
     var hideEvent = $.Event('hide.bs.tab', {
@@ -52,7 +52,7 @@
 
     var $target = $(selector)
 
-    this.activate($this.closest('.' + classPrefix + '-tag-li'), $ul)
+    this.activate($this.closest('.' + classPrefix + '-html-li'), $ul)
     this.activate($target, $target.parent(), function () {
       $previous.trigger({
         type: 'hidden.bs.tab',
@@ -94,7 +94,7 @@
 
       if (element.parent('.' + classPrefix + '-dropdown-menu').length) {
         element
-          .closest('.' + classPrefix + '-tag-li.dropdown')
+          .closest('.' + classPrefix + '-html-li.dropdown')
             .addClass(classPrefix + '-active')
           .end()
           .find('[data-toggle="tab"]')

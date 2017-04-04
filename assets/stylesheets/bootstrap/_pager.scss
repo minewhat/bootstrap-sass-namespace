@@ -9,10 +9,10 @@
   list-style: none;
   text-align: center;
   @include clearfix;
-  .#{$class-prefix}-tag-li {
+  .#{$class-prefix}-html-li {
     display: inline;
-    > .#{$class-prefix}-tag-a,
-    > .#{$class-prefix}-tag-span {
+    > .#{$class-prefix}-html-a,
+    > .#{$class-prefix}-html-span {
       display: inline-block;
       padding: 5px 14px;
       background-color: $pager-bg;
@@ -20,32 +20,32 @@
       border-radius: $pager-border-radius;
     }
 
-    > .#{$class-prefix}-tag-a:hover,
-    > .#{$class-prefix}-tag-a:focus {
+    > .#{$class-prefix}-html-a:hover,
+    > .#{$class-prefix}-html-a:focus {
       text-decoration: none;
       background-color: $pager-hover-bg;
     }
   }
 
   .#{$class-prefix}-next {
-    > .#{$class-prefix}-tag-a,
-    > .#{$class-prefix}-tag-span {
+    > .#{$class-prefix}-html-a,
+    > .#{$class-prefix}-html-span {
       float: right;
     }
   }
 
   .#{$class-prefix}-previous {
-    > .#{$class-prefix}-tag-a,
-    > .#{$class-prefix}-tag-span {
+    > .#{$class-prefix}-html-a,
+    > .#{$class-prefix}-html-span {
       float: left;
     }
   }
 
   .#{$class-prefix}-disabled {
-    > .#{$class-prefix}-tag-a,
-    > .#{$class-prefix}-tag-a:hover,
-    > .#{$class-prefix}-tag-a:focus,
-    > .#{$class-prefix}-tag-span {
+    > .#{$class-prefix}-html-a,
+    > .#{$class-prefix}-html-a:hover,
+    > .#{$class-prefix}-html-a:focus,
+    > .#{$class-prefix}-html-span {
       color: $pager-disabled-color;
       background-color: $pager-bg;
       cursor: $cursor-disabled;

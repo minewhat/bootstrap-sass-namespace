@@ -41,7 +41,7 @@
   }
   &.#{$class-prefix}-disabled,
   &[disabled],
-  .#{$class-prefix}-tag-fieldset[disabled] & {
+  .#{$class-prefix}-html-fieldset[disabled] & {
     &:hover,
     &:focus,
     &.#{$class-prefix}-focus {

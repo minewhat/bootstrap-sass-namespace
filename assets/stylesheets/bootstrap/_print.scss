@@ -15,54 +15,54 @@
         text-shadow: none !important;
     }
 
-    .#{$class-prefix}-tag-a,
-    .#{$class-prefix}-tag-a:visited {
+    .#{$class-prefix}-html-a,
+    .#{$class-prefix}-html-a:visited {
         text-decoration: underline;
     }
 
-    .#{$class-prefix}-tag-a[href]:after {
+    .#{$class-prefix}-html-a[href]:after {
         content: " (" attr(href) ")";
     }
 
-    .#{$class-prefix}-tag-abbr[title]:after {
+    .#{$class-prefix}-html-abbr[title]:after {
         content: " (" attr(title) ")";
     }
 
     // Don't show links that are fragment identifiers,
     // or use the `javascript:` pseudo protocol
-    .#{$class-prefix}-tag-a[href^="#"]:after,
-    .#{$class-prefix}-tag-a[href^="javascript:"]:after {
+    .#{$class-prefix}-html-a[href^="#"]:after,
+    .#{$class-prefix}-html-a[href^="javascript:"]:after {
         content: "";
     }
 
-    .#{$class-prefix}-tag-pre,
-    .#{$class-prefix}-tag-blockquote {
+    .#{$class-prefix}-html-pre,
+    .#{$class-prefix}-html-blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
 
-    .#{$class-prefix}-tag-thead {
+    .#{$class-prefix}-html-thead {
         display: table-header-group; // h5bp.com/t
     }
 
-    .#{$class-prefix}-tag-tr,
-    .#{$class-prefix}-tag-img {
+    .#{$class-prefix}-html-tr,
+    .#{$class-prefix}-html-img {
         page-break-inside: avoid;
     }
 
-    .#{$class-prefix}-tag-img {
+    .#{$class-prefix}-html-img {
         max-width: 100% !important;
     }
 
-    .#{$class-prefix}-tag-p,
-    .#{$class-prefix}-tag-h2,
-    .#{$class-prefix}-tag-h3 {
+    .#{$class-prefix}-html-p,
+    .#{$class-prefix}-html-h2,
+    .#{$class-prefix}-html-h3 {
         orphans: 3;
         widows: 3;
     }
 
-    .#{$class-prefix}-tag-h2,
-    .#{$class-prefix}-tag-h3 {
+    .#{$class-prefix}-html-h2,
+    .#{$class-prefix}-html-h3 {
         page-break-after: avoid;
     }
 
@@ -85,14 +85,14 @@
     .#{$class-prefix}-table {
         border-collapse: collapse !important;
 
-        .#{$class-prefix}-tag-td,
-        .#{$class-prefix}-tag-th {
+        .#{$class-prefix}-html-td,
+        .#{$class-prefix}-html-th {
             background-color: #fff !important;
         }
     }
     .#{$class-prefix}-table-bordered {
-        .#{$class-prefix}-tag-th,
-        .#{$class-prefix}-tag-td {
+        .#{$class-prefix}-html-th,
+        .#{$class-prefix}-html-td {
             border: 1px solid #ddd !important;
         }
     }

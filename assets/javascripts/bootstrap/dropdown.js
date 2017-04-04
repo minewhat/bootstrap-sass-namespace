@@ -111,7 +111,7 @@
       return $this.trigger('click')
     }
 
-    var desc = ' .' + classPrefix + '-tag-li:not(.' + classPrefix + '-disabled):visible .' + classPrefix + '-tag-a'
+    var desc = ' .' + classPrefix + '-html-li:not(.' + classPrefix + '-disabled):visible .' + classPrefix + '-html-a'
     var $items = $parent.find('.' + classPrefix + '-dropdown-menu' + desc)
 
     if (!$items.length) return

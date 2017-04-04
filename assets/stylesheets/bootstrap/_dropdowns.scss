@@ -62,7 +62,7 @@
   }
 
   // Links within the dropdown menu
-  > .#{$class-prefix}-tag-li > .#{$class-prefix}-tag-a {
+  > .#{$class-prefix}-html-li > .#{$class-prefix}-html-a {
     display: block;
     padding: 3px 20px;
     clear: both;
@@ -74,7 +74,7 @@
 }
 
 // Hover/Focus state
-.#{$class-prefix}-dropdown-menu > .#{$class-prefix}-tag-li > .#{$class-prefix}-tag-a {
+.#{$class-prefix}-dropdown-menu > .#{$class-prefix}-html-li > .#{$class-prefix}-html-a {
   &:hover,
   &:focus {
     text-decoration: none;
@@ -84,7 +84,7 @@
 }
 
 // Active state
-.#{$class-prefix}-dropdown-menu > .#{$class-prefix}-active > .#{$class-prefix}-tag-a {
+.#{$class-prefix}-dropdown-menu > .#{$class-prefix}-active > .#{$class-prefix}-html-a {
   &,
   &:hover,
   &:focus {
@@ -99,7 +99,7 @@
 //
 // Gray out text and ensure the hover/focus state remains gray
 
-.#{$class-prefix}-dropdown-menu > .#{$class-prefix}-disabled > .#{$class-prefix}-tag-a {
+.#{$class-prefix}-dropdown-menu > .#{$class-prefix}-disabled > .#{$class-prefix}-html-a {
   &,
   &:hover,
   &:focus {
@@ -125,7 +125,7 @@
   }
 
   // Remove the outline when :focus is triggered
-  > .#{$class-prefix}-tag-a {
+  > .#{$class-prefix}-html-a {
     outline: 0;
   }
 }

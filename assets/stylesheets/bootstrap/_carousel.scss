@@ -19,8 +19,8 @@
     @include transition(.6s ease-in-out left);
 
     // Account for jankitude on images
-    > .#{$class-prefix}-tag-img,
-    > .#{$class-prefix}-tag-a > .#{$class-prefix}-tag-img {
+    > .#{$class-prefix}-html-img,
+    > .#{$class-prefix}-html-a > .#{$class-prefix}-html-img {
       @include img-responsive;
       line-height: 1;
     }
@@ -182,7 +182,7 @@
   list-style: none;
   text-align: center;
 
-  .#{$class-prefix}-tag-li {
+  .#{$class-prefix}-html-li {
     display: inline-block;
     width:  10px;
     height: 10px;

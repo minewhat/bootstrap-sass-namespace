@@ -39,7 +39,7 @@
 
   // Account for badges in navs
   .#{$class-prefix}-list-group-item.#{$class-prefix}-active > &,
-  .#{$class-prefix}-nav-pills > .#{$class-prefix}-active > .#{$class-prefix}-tag-a > & {
+  .#{$class-prefix}-nav-pills > .#{$class-prefix}-active > .#{$class-prefix}-html-a > & {
     color: $badge-active-color;
     background-color: $badge-active-bg;
   }
@@ -52,13 +52,13 @@
     margin-right: 5px;
   }
 
-  .#{$class-prefix}-nav-pills > .#{$class-prefix}-tag-li > .#{$class-prefix}-tag-a > & {
+  .#{$class-prefix}-nav-pills > .#{$class-prefix}-html-li > .#{$class-prefix}-html-a > & {
     margin-left: 3px;
   }
 }
 
 // Hover state, but only for links
-.#{$class-prefix}-tag-a.#{$class-prefix}-badge {
+.#{$class-prefix}-html-a.#{$class-prefix}-badge {
   &:hover,
   &:focus {
     color: $badge-link-hover-color;

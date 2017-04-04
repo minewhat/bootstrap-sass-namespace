@@ -29,7 +29,7 @@
 }
 
 // Add hover effects, but only for links
-.#{$class-prefix}-tag-a.#{$class-prefix}-label {
+.#{$class-prefix}-html-a.#{$class-prefix}-label {
   &:hover,
   &:focus {
     color: $label-link-hover-color;
