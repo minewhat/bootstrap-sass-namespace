@@ -8,8 +8,6 @@
   "files": [
     "assets",
     "eyeglass-exports.js",
-    "CHANGELOG.md",
-    "LICENSE",
     "README.md"
   ],
   "repository": {
