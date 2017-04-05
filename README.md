@@ -3,19 +3,25 @@ The purpose of the project is using all the power of Bootstrap with bringing as 
 
 ## How to use
 
-1. Define class prefix in SASS.
-```sass
-$class-prefix: 'my-app';
+1. Install
+```bash
+npm install --save bootstrap-sass-namespace
 ```
 
-2. Define class prefix in JS **before** including JS assets.
+2. Define class prefix in SASS.
+```sass
+$class-prefix: 'my-app';
+@import "node_modules/bootstrap-sass-namespace/assets/stylesheets/_bootstrap.scss";
+```
+
+3. Define class prefix in JS **before** including JS assets.
 ```html
 <script>
     BOOTSTRAP_NAMESPACE = 'my-app';
 </script>
 <script src="assets/javascripts/bootstrap.min.js"></script>
 ```
-3. Use special class notation `*prefix*-html-*tag*` on every tag.
+4. Use special class notation `*prefix*-html-*tag*` on every tag.
 Below you can find an example of drop down menu.
 ```html
 <div class="my-app-html-div my-app-dropdown">
