@@ -3,6 +3,10 @@ This project is designed to bring Bootstrap which doesn't conflict with existing
 
 You should consider using this project if you need to apply Bootstrap partially. ie to particular div of a page.
 
+## Contribute
+
+Even though the project is in alpha stage, it serves it's initial purpose pretty accurately. If you find any problem, you're more than welcomed to create an issue or pull request.
+
 ## How to use
 
 1. Install
@@ -40,10 +44,6 @@ Below you can find an example of drop down menu.
   </ul>
 </div>
 ```
-
-## Contributing
-
-Even though the project is in alpha stage, it serves it's initial purpose pretty accurately. If you find any problem, you're more than welcomed to create an issue or pull request.
 
 ## License
 
