@@ -16,7 +16,7 @@ npm install --save bootstrap-sass-namespace
 
 2. Define class prefix in SASS.
 ```sass
-$class-prefix: 'my-app';
+$class-prefix: 'my-namespace';
 @import "node_modules/bootstrap-sass-namespace/assets/stylesheets/_bootstrap.scss";
 ```
 
