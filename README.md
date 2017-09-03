@@ -23,24 +23,24 @@ $class-prefix: 'my-app';
 3. Define class prefix in JS **before** including JS assets.
 ```html
 <script>
-    BOOTSTRAP_NAMESPACE = 'my-app';
+    BOOTSTRAP_NAMESPACE = 'my-namespace';
 </script>
 <script src="assets/javascripts/bootstrap.min.js"></script>
 ```
 4. Use special class notation `*prefix*-html-*tag*` on every tag.
 Below you can find an example of drop down menu.
 ```html
-<div class="my-app-html-div my-app-dropdown">
-  <button class="my-app-html-button my-app-btn my-app-btn-default my-app-dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+<div class="my-namespace-html-div my-namespace-dropdown">
+  <button class="my-namespace-html-button my-namespace-btn my-namespace-btn-default my-namespace-dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     Dropdown
-    <span class="my-app-html-span my-app-caret"></span>
+    <span class="my-namespace-html-span my-namespace-caret"></span>
   </button>
-  <ul class="my-app-html-ul my-app-dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li class="my-app-html-li"><a class="my-app-html-a" href="#">Action</a></li>
-    <li class="my-app-html-li"><a class="my-app-html-a" href="#">Another action</a></li>
-    <li class="my-app-html-li"><a class="my-app-html-a" href="#">Something else here</a></li>
-    <li class="my-app-html-li my-app-divider" role="separator"></li>
-    <li class="my-app-html-li"><a class="my-app-html-a" href="#">Separated link</a></li>
+  <ul class="my-namespace-html-ul my-namespace-dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li class="my-namespace-html-li"><a class="my-namespace-html-a" href="#">Action</a></li>
+    <li class="my-namespace-html-li"><a class="my-namespace-html-a" href="#">Another action</a></li>
+    <li class="my-namespace-html-li"><a class="my-namespace-html-a" href="#">Something else here</a></li>
+    <li class="my-namespace-html-li my-namespace-divider" role="separator"></li>
+    <li class="my-namespace-html-li"><a class="my-namespace-html-a" href="#">Separated link</a></li>
   </ul>
 </div>
 ```
