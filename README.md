@@ -1,5 +1,6 @@
 # Bootstrap for Sass with prefixes
 This project is designed to bring Bootsrap which doesn't conflict with existing CSS and JS of a website.
+
 You should consider using this project if you need to apply Bootstrap to a block of a page.
 
 ## How to use
