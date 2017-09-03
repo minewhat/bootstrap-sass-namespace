@@ -1,5 +1,5 @@
 # Namespaced Bootstrap
-This project is designed to bring Bootsrap which doesn't conflict with existing CSS and JS of a website.
+This project is designed to bring Bootstrap which doesn't conflict with existing CSS and JS of a website.
 
 You should consider using this project if you need to apply Bootstrap partially. ie to particular div of a page.
 
@@ -43,7 +43,7 @@ Below you can find an example of drop down menu.
 
 ## Contributing
 
-Even though the project in alpha stage, it serves it's initial purpose pretty accurately. If you find any problem, you're more than welcomed to create an issue or pull request.
+Even though the project is in alpha stage, it serves it's initial purpose pretty accurately. If you find any problem, you're more than welcomed to create an issue or pull request.
 
 ## License
 
