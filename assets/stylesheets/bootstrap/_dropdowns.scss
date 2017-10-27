@@ -17,7 +17,7 @@
 }
 
 // The dropdown wrapper (div)
-.#{$class-prefix}-dropup,
+.dropup,
 .#{$class-prefix}-dropdown {
   position: relative;
 }
@@ -118,7 +118,7 @@
 }
 
 // Open state for the dropdown
-.#{$class-prefix}-open {
+.open {
   // Show the menu
   > .#{$class-prefix}-dropdown-menu {
     display: block;
@@ -180,7 +180,7 @@
 // Just add .dropup after the standard .dropdown class and you're set, bro.
 // TODO: abstract this so that the navbar fixed styles are not placed here?
 
-.#{$class-prefix}-dropup,
+.dropup,
 .#{$class-prefix}-navbar-fixed-bottom .#{$class-prefix}-dropdown {
   // Reverse the caret
   .#{$class-prefix}-caret {

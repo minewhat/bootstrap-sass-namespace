@@ -6,16 +6,16 @@
 // Floats
 // -------------------------
 
-.#{$class-prefix}-clearfix {
+.clearfix {
   @include clearfix;
 }
 .#{$class-prefix}-center-block {
   @include center-block;
 }
-.#{$class-prefix}-pull-right {
+.pull-right {
   float: right !important;
 }
-.#{$class-prefix}-pull-left {
+.pull-left {
   float: left !important;
 }
 
