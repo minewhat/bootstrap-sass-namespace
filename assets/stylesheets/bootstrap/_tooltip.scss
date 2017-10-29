@@ -15,7 +15,7 @@
 
   @include opacity(0);
 
-  &.#{$class-prefix}-in     { @include opacity($tooltip-opacity); }
+  &.in     { @include opacity($tooltip-opacity); }
   &.#{$class-prefix}-top    { margin-top:  -3px; padding: $tooltip-arrow-width 0; }
   &.right  { margin-left:  3px; padding: 0 $tooltip-arrow-width; }
   &.#{$class-prefix}-bottom { margin-top:   3px; padding: $tooltip-arrow-width 0; }

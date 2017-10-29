@@ -33,7 +33,7 @@
     @include translate(0, -25%);
     @include transition-transform(0.3s ease-out);
   }
-  &.#{$class-prefix}-in .#{$class-prefix}-modal-dialog { @include translate(0, 0) }
+  &.in .#{$class-prefix}-modal-dialog { @include translate(0, 0) }
 }
 .#{$class-prefix}-modal-open .#{$class-prefix}-modal {
   overflow-x: hidden;
@@ -71,7 +71,7 @@
   background-color: $modal-backdrop-bg;
   // Fade for backdrop
   &.fade { @include opacity(0); }
-  &.#{$class-prefix}-in { @include opacity($modal-backdrop-opacity); }
+  &.in { @include opacity($modal-backdrop-opacity); }
 }
 
 // Modal header

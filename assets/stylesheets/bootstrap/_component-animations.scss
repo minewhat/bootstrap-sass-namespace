@@ -10,7 +10,7 @@
 .fade {
   opacity: 0;
   @include transition(opacity .15s linear);
-  &.#{$class-prefix}-in {
+  &.in {
     opacity: 1;
   }
 }
@@ -18,14 +18,14 @@
 .collapse {
   display: none;
 
-  &.#{$class-prefix}-in      { display: block; }
+  &.in      { display: block; }
   // [converter] extracted tr&.in to tr.collapse.in
   // [converter] extracted tbody&.in to tbody.collapse.in
 }
 
-tr.collapse.#{$class-prefix}-in    { display: table-row; }
+tr.collapse.in    { display: table-row; }
 
-tbody.collapse.#{$class-prefix}-in { display: table-row-group; }
+tbody.collapse.in { display: table-row-group; }
 
 .collapsing {
   position: relative;
