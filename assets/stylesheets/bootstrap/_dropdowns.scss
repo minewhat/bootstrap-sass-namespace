@@ -51,7 +51,7 @@
   // Aligns the dropdown menu to right
   //
   // Deprecated as of 3.1.0 in favor of `.dropdown-menu-[dir]`
-  &.#{$class-prefix}-pull-right {
+  &.pull-right {
     right: 0;
     left: auto;
   }
@@ -62,7 +62,7 @@
   }
 
   // Links within the dropdown menu
-  > .#{$class-prefix}-html-li > .#{$class-prefix}-html-a {
+  > li > a {
     display: block;
     padding: 3px 20px;
     clear: both;
@@ -74,7 +74,7 @@
 }
 
 // Hover/Focus state
-.#{$class-prefix}-dropdown-menu > .#{$class-prefix}-html-li > .#{$class-prefix}-html-a {
+.#{$class-prefix}-dropdown-menu > li > a {
   &:hover,
   &:focus {
     text-decoration: none;
@@ -84,7 +84,7 @@
 }
 
 // Active state
-.#{$class-prefix}-dropdown-menu > .#{$class-prefix}-active > .#{$class-prefix}-html-a {
+.#{$class-prefix}-dropdown-menu > .active > a {
   &,
   &:hover,
   &:focus {
@@ -99,7 +99,7 @@
 //
 // Gray out text and ensure the hover/focus state remains gray
 
-.#{$class-prefix}-dropdown-menu > .#{$class-prefix}-disabled > .#{$class-prefix}-html-a {
+.#{$class-prefix}-dropdown-menu > .disabled > a {
   &,
   &:hover,
   &:focus {
@@ -125,7 +125,7 @@
   }
 
   // Remove the outline when :focus is triggered
-  > .#{$class-prefix}-html-a {
+  > a {
     outline: 0;
   }
 }
@@ -170,7 +170,7 @@
 }
 
 // Right aligned dropdowns
-.#{$class-prefix}-pull-right > .#{$class-prefix}-dropdown-menu {
+.pull-right > .#{$class-prefix}-dropdown-menu {
   right: 0;
   left: auto;
 }

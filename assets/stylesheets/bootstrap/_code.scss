@@ -4,15 +4,15 @@
 
 
 // Inline and block code styles
-.#{$class-prefix}-html-code,
-.#{$class-prefix}-html-kbd,
-.#{$class-prefix}-html-pre,
-.#{$class-prefix}-html-samp {
+code,
+kbd,
+pre,
+samp {
   font-family: $font-family-monospace;
 }
 
 // Inline code
-.#{$class-prefix}-html-code {
+code {
   padding: 2px 4px;
   font-size: 90%;
   color: $code-color;
@@ -21,7 +21,7 @@
 }
 
 // User input typically entered via keyboard
-.#{$class-prefix}-html-kbd {
+kbd {
   padding: 2px 4px;
   font-size: 90%;
   color: $kbd-color;
@@ -29,7 +29,7 @@
   border-radius: $border-radius-small;
   box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
 
-  .#{$class-prefix}-html-kbd {
+  kbd {
     padding: 0;
     font-size: 100%;
     font-weight: bold;
@@ -38,7 +38,7 @@
 }
 
 // Blocks of code
-.#{$class-prefix}-html-pre {
+pre {
   display: block;
   padding: (($line-height-computed - 1) / 2);
   margin: 0 0 ($line-height-computed / 2);
@@ -52,7 +52,7 @@
   border-radius: $border-radius-base;
 
   // Account for some code outputs that place code tags in pre tags
-  .#{$class-prefix}-html-code {
+  code {
     padding: 0;
     font-size: inherit;
     color: inherit;

@@ -7,7 +7,7 @@
 //
 // Restyle and baseline non-control form elements.
 
-.#{$class-prefix}-html-fieldset {
+fieldset {
   padding: 0;
   margin: 0;
   border: 0;
@@ -17,7 +17,7 @@
   min-width: 0;
 }
 
-.#{$class-prefix}-html-legend {
+legend {
   display: block;
   width: 100%;
   padding: 0;
@@ -29,7 +29,7 @@
   border-bottom: 1px solid $legend-border-color;
 }
 
-.#{$class-prefix}-html-label {
+label {
   display: inline-block;
   max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
   margin-bottom: 5px;
@@ -44,43 +44,43 @@
 // address browser inconsistencies.
 
 // Override content-box in Normalize (* isn't specific enough)
-.#{$class-prefix}-html-input[type="search"] {
+input[type="search"] {
   @include box-sizing(border-box);
 }
 
 // Position radios and checkboxes better
-.#{$class-prefix}-html-input[type="radio"],
-.#{$class-prefix}-html-input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
   margin: 4px 0 0;
   margin-top: 1px \9; // IE8-9
   line-height: normal;
 }
 
-.#{$class-prefix}-html-input[type="file"] {
+input[type="file"] {
   display: block;
 }
 
 // Make range inputs behave like textual form controls
-.#{$class-prefix}-html-input[type="range"] {
+input[type="range"] {
   display: block;
   width: 100%;
 }
 
 // Make multiple select elements height not fixed
-.#{$class-prefix}-html-select[multiple],
-.#{$class-prefix}-html-select[size] {
+select[multiple],
+select[size] {
   height: auto;
 }
 
 // Focus for file, radio, and checkbox
-.#{$class-prefix}-html-input[type="file"]:focus,
-.#{$class-prefix}-html-input[type="radio"]:focus,
-.#{$class-prefix}-html-input[type="checkbox"]:focus {
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
   @include tab-focus;
 }
 
 // Adjust output element
-.#{$class-prefix}-html-output {
+output {
   display: block;
   padding-top: ($padding-base-vertical + 1);
   font-size: $font-size-base;
@@ -145,13 +145,13 @@
   // don't honor that edge case; we style them as disabled anyway.
   &[disabled],
   &[readonly],
-  .#{$class-prefix}-html-fieldset[disabled] & {
+  fieldset[disabled] & {
     background-color: $input-bg-disabled;
     opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
   }
 
   &[disabled],
-  .#{$class-prefix}-html-fieldset[disabled] & {
+  fieldset[disabled] & {
     cursor: $cursor-disabled;
   }
 
@@ -159,7 +159,7 @@
 }
 
 // Reset height for `textarea`s
-.#{$class-prefix}-html-textarea.#{$class-prefix}-form-control {
+textarea.#{$class-prefix}-form-control {
   height: auto;
 }
 
@@ -171,7 +171,7 @@
 // be added to `.form-control` as it's not specific enough. For details, see
 // https://github.com/twbs/bootstrap/issues/11586.
 
-.#{$class-prefix}-html-input[type="search"] {
+input[type="search"] {
   -webkit-appearance: none;
 }
 
@@ -186,10 +186,10 @@
 // Note that as of 9.3, iOS doesn't support `week`.
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  .#{$class-prefix}-html-input[type="date"],
-  .#{$class-prefix}-html-input[type="time"],
-  .#{$class-prefix}-html-input[type="datetime-local"],
-  .#{$class-prefix}-html-input[type="month"] {
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] {
     &.#{$class-prefix}-form-control {
       line-height: $input-height-base;
     }
@@ -228,7 +228,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
 
-  .#{$class-prefix}-html-label {
+  label {
     min-height: $line-height-computed; // Ensure the input doesn't jump when there is no text
     padding-left: 20px;
     margin-bottom: 0;
@@ -236,10 +236,10 @@
     cursor: pointer;
   }
 }
-.#{$class-prefix}-radio .#{$class-prefix}-html-input[type="radio"],
-.#{$class-prefix}-radio-inline .#{$class-prefix}-html-input[type="radio"],
-.#{$class-prefix}-checkbox .#{$class-prefix}-html-input[type="checkbox"],
-.#{$class-prefix}-checkbox-inline .#{$class-prefix}-html-input[type="checkbox"] {
+.#{$class-prefix}-radio input[type="radio"],
+.#{$class-prefix}-radio-inline input[type="radio"],
+.#{$class-prefix}-checkbox input[type="checkbox"],
+.#{$class-prefix}-checkbox-inline input[type="checkbox"] {
   position: absolute;
   margin-left: -20px;
   margin-top: 4px \9;
@@ -271,28 +271,28 @@
 // Some special care is needed because <label>s don't inherit their parent's `cursor`.
 //
 // Note: Neither radios nor checkboxes can be readonly.
-.#{$class-prefix}-html-input[type="radio"],
-.#{$class-prefix}-html-input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
   &[disabled],
-  &.#{$class-prefix}-disabled,
-  .#{$class-prefix}-html-fieldset[disabled] & {
+  &.disabled,
+  fieldset[disabled] & {
     cursor: $cursor-disabled;
   }
 }
 // These classes are used directly on <label>s
 .#{$class-prefix}-radio-inline,
 .#{$class-prefix}-checkbox-inline {
-  &.#{$class-prefix}-disabled,
-  .#{$class-prefix}-html-fieldset[disabled] & {
+  &.disabled,
+  fieldset[disabled] & {
     cursor: $cursor-disabled;
   }
 }
 // These classes are used on elements with <label> descendants
 .#{$class-prefix}-radio,
 .#{$class-prefix}-checkbox {
-  &.#{$class-prefix}-disabled,
-  .#{$class-prefix}-html-fieldset[disabled] & {
-    .#{$class-prefix}-html-label {
+  &.disabled,
+  fieldset[disabled] & {
+    label {
       cursor: $cursor-disabled;
     }
   }
@@ -337,12 +337,12 @@
     line-height: $line-height-small;
     border-radius: $input-border-radius-small;
   }
-  .#{$class-prefix}-html-select.#{$class-prefix}-form-control {
+  select.#{$class-prefix}-form-control {
     height: $input-height-small;
     line-height: $input-height-small;
   }
-  .#{$class-prefix}-html-textarea.#{$class-prefix}-form-control,
-  .#{$class-prefix}-html-select[multiple].#{$class-prefix}-form-control {
+  textarea.#{$class-prefix}-form-control,
+  select[multiple].#{$class-prefix}-form-control {
     height: auto;
   }
   .#{$class-prefix}-form-control-static {
@@ -363,12 +363,12 @@
     line-height: $line-height-large;
     border-radius: $input-border-radius-large;
   }
-  .#{$class-prefix}-html-select.#{$class-prefix}-form-control {
+  select.#{$class-prefix}-form-control {
     height: $input-height-large;
     line-height: $input-height-large;
   }
-  .#{$class-prefix}-html-textarea.#{$class-prefix}-form-control,
-  .#{$class-prefix}-html-select[multiple].#{$class-prefix}-form-control {
+  textarea.#{$class-prefix}-form-control,
+  select[multiple].#{$class-prefix}-form-control {
     height: auto;
   }
   .#{$class-prefix}-form-control-static {
@@ -434,7 +434,7 @@
 }
 
 // Reposition feedback icon if input has visible label above
-.#{$class-prefix}-has-feedback .#{$class-prefix}-html-label {
+.#{$class-prefix}-has-feedback label {
 
   & ~ .#{$class-prefix}-form-control-feedback {
     top: ($line-height-computed + 5); // Height of the `label` and its margin
@@ -523,12 +523,12 @@
       margin-bottom: 0;
       vertical-align: middle;
 
-      .#{$class-prefix}-html-label {
+      label {
         padding-left: 0;
       }
     }
-    .#{$class-prefix}-radio .#{$class-prefix}-html-input[type="radio"],
-    .#{$class-prefix}-checkbox .#{$class-prefix}-html-input[type="checkbox"] {
+    .#{$class-prefix}-radio input[type="radio"],
+    .#{$class-prefix}-checkbox input[type="checkbox"] {
       position: relative;
       margin-left: 0;
     }

@@ -11,10 +11,10 @@
   .#{$class-prefix}-checkbox,
   .#{$class-prefix}-radio-inline,
   .#{$class-prefix}-checkbox-inline,
-  &.#{$class-prefix}-radio .#{$class-prefix}-html-label,
-  &.#{$class-prefix}-checkbox .#{$class-prefix}-html-label,
-  &.#{$class-prefix}-radio-inline .#{$class-prefix}-html-label,
-  &.#{$class-prefix}-checkbox-inline .#{$class-prefix}-html-label  {
+  &.#{$class-prefix}-radio label,
+  &.#{$class-prefix}-checkbox label,
+  &.#{$class-prefix}-radio-inline label,
+  &.#{$class-prefix}-checkbox-inline label  {
     color: $text-color;
   }
   // Set the border and box shadow on specific inputs to match
@@ -76,13 +76,13 @@
     border-radius: $border-radius;
   }
 
-  .#{$class-prefix}-html-select#{$parent} {
+  select#{$parent} {
     height: $input-height;
     line-height: $input-height;
   }
 
-  .#{$class-prefix}-html-textarea#{$parent},
-  .#{$class-prefix}-html-select[multiple]#{$parent} {
+  textarea#{$parent},
+  select[multiple]#{$parent} {
     height: auto;
   }
 }

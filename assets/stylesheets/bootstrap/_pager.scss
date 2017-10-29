@@ -9,10 +9,10 @@
   list-style: none;
   text-align: center;
   @include clearfix;
-  .#{$class-prefix}-html-li {
+  li {
     display: inline;
-    > .#{$class-prefix}-html-a,
-    > .#{$class-prefix}-html-span {
+    > a,
+    > span {
       display: inline-block;
       padding: 5px 14px;
       background-color: $pager-bg;
@@ -20,32 +20,32 @@
       border-radius: $pager-border-radius;
     }
 
-    > .#{$class-prefix}-html-a:hover,
-    > .#{$class-prefix}-html-a:focus {
+    > a:hover,
+    > a:focus {
       text-decoration: none;
       background-color: $pager-hover-bg;
     }
   }
 
   .#{$class-prefix}-next {
-    > .#{$class-prefix}-html-a,
-    > .#{$class-prefix}-html-span {
+    > a,
+    > span {
       float: right;
     }
   }
 
   .#{$class-prefix}-previous {
-    > .#{$class-prefix}-html-a,
-    > .#{$class-prefix}-html-span {
+    > a,
+    > span {
       float: left;
     }
   }
 
-  .#{$class-prefix}-disabled {
-    > .#{$class-prefix}-html-a,
-    > .#{$class-prefix}-html-a:hover,
-    > .#{$class-prefix}-html-a:focus,
-    > .#{$class-prefix}-html-span {
+  .disabled {
+    > a,
+    > a:hover,
+    > a:focus,
+    > span {
       color: $pager-disabled-color;
       background-color: $pager-bg;
       cursor: $cursor-disabled;

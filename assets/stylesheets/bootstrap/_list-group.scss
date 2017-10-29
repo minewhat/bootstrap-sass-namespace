@@ -43,8 +43,8 @@
 // Use anchor or button elements instead of `li`s or `div`s to create interactive items.
 // Includes an extra `.active` modifier class for showing selected items.
 
-.#{$class-prefix}-html-a.#{$class-prefix}-list-group-item,
-.#{$class-prefix}-html-button.#{$class-prefix}-list-group-item {
+a.#{$class-prefix}-list-group-item,
+button.#{$class-prefix}-list-group-item {
   color: $list-group-link-color;
 
   .#{$class-prefix}-list-group-item-heading {
@@ -60,16 +60,16 @@
   }
 }
 
-.#{$class-prefix}-html-button.#{$class-prefix}-list-group-item {
+button.#{$class-prefix}-list-group-item {
   width: 100%;
   text-align: left;
 }
 
 .#{$class-prefix}-list-group-item {
   // Disabled state
-  &.#{$class-prefix}-disabled,
-  &.#{$class-prefix}-disabled:hover,
-  &.#{$class-prefix}-disabled:focus {
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:focus {
     background-color: $list-group-disabled-bg;
     color: $list-group-disabled-color;
     cursor: $cursor-disabled;
@@ -84,9 +84,9 @@
   }
 
   // Active class on item itself, not parent
-  &.#{$class-prefix}-active,
-  &.#{$class-prefix}-active:hover,
-  &.#{$class-prefix}-active:focus {
+  &.active,
+  &.active:hover,
+  &.active:focus {
     z-index: 2; // Place active items above their siblings for proper border styling
     color: $list-group-active-color;
     background-color: $list-group-active-bg;
@@ -94,7 +94,7 @@
 
     // Force color to inherit for custom content
     .#{$class-prefix}-list-group-item-heading,
-    .#{$class-prefix}-list-group-item-heading > .#{$class-prefix}-html-small,
+    .#{$class-prefix}-list-group-item-heading > small,
     .#{$class-prefix}-list-group-item-heading > .#{$class-prefix}-small {
       color: inherit;
     }

@@ -98,8 +98,8 @@
   }
 
   // Nuke default margins from checkboxes and radios to vertically center within.
-  .#{$class-prefix}-html-input[type="radio"],
-  .#{$class-prefix}-html-input[type="checkbox"] {
+  input[type="radio"],
+  input[type="checkbox"] {
     margin-top: 0;
   }
 }

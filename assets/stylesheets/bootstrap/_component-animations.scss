@@ -23,9 +23,9 @@
   // [converter] extracted tbody&.in to tbody.collapse.in
 }
 
-.#{$class-prefix}-html-tr.#{$class-prefix}-collapse.#{$class-prefix}-in    { display: table-row; }
+tr.#{$class-prefix}-collapse.#{$class-prefix}-in    { display: table-row; }
 
-.#{$class-prefix}-html-tbody.#{$class-prefix}-collapse.#{$class-prefix}-in { display: table-row-group; }
+tbody.#{$class-prefix}-collapse.#{$class-prefix}-in { display: table-row-group; }
 
 .#{$class-prefix}-collapsing {
   position: relative;

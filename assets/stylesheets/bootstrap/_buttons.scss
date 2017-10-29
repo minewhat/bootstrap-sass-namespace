@@ -22,30 +22,30 @@
 
   &,
   &:active,
-  &.#{$class-prefix}-active {
+  &.active {
     &:focus,
-    &.#{$class-prefix}-focus {
+    &.focus {
       @include tab-focus;
     }
   }
 
   &:hover,
   &:focus,
-  &.#{$class-prefix}-focus {
+  &.focus {
     color: $btn-default-color;
     text-decoration: none;
   }
 
   &:active,
-  &.#{$class-prefix}-active {
+  &.active {
     outline: 0;
     background-image: none;
     @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
   }
 
-  &.#{$class-prefix}-disabled,
+  &.disabled,
   &[disabled],
-  .#{$class-prefix}-html-fieldset[disabled] & {
+  fieldset[disabled] & {
     cursor: $cursor-disabled;
     @include opacity(.65);
     @include box-shadow(none);
@@ -54,9 +54,9 @@
   // [converter] extracted a& to a.btn
 }
 
-.#{$class-prefix}-html-a.#{$class-prefix}-btn {
-  &.#{$class-prefix}-disabled,
-  .#{$class-prefix}-html-fieldset[disabled] & {
+a.#{$class-prefix}-btn {
+  &.disabled,
+  fieldset[disabled] & {
     pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
   }
 }
@@ -100,9 +100,9 @@
 
   &,
   &:active,
-  &.#{$class-prefix}-active,
+  &.active,
   &[disabled],
-  .#{$class-prefix}-html-fieldset[disabled] & {
+  fieldset[disabled] & {
     background-color: transparent;
     @include box-shadow(none);
   }
@@ -119,7 +119,7 @@
     background-color: transparent;
   }
   &[disabled],
-  .#{$class-prefix}-html-fieldset[disabled] & {
+  fieldset[disabled] & {
     &:hover,
     &:focus {
       color: $btn-link-disabled-color;
@@ -159,9 +159,9 @@
 }
 
 // Specificity overrides
-.#{$class-prefix}-html-input[type="submit"],
-.#{$class-prefix}-html-input[type="reset"],
-.#{$class-prefix}-html-input[type="button"] {
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
   &.#{$class-prefix}-btn-block {
     width: 100%;
   }

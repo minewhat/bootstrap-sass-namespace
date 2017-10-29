@@ -13,7 +13,7 @@
   border-radius: $alert-border-radius;
 
   // Headings for larger alerts
-  .#{$class-prefix}-html-h4 {
+  h4 {
     margin-top: 0;
     // Specified for the h4 to prevent conflicts of changing $headings-color
     color: inherit;
@@ -25,12 +25,12 @@
   }
 
   // Improve alignment and spacing of inner content
-  > .#{$class-prefix}-html-p,
-  > .#{$class-prefix}-html-ul {
+  > p,
+  > ul {
     margin-bottom: 0;
   }
 
-  > .#{$class-prefix}-html-p + .#{$class-prefix}-html-p {
+  > p + p {
     margin-top: 5px;
   }
 }
@@ -44,7 +44,7 @@
   padding-right: ($alert-padding + 20);
 
   // Adjust close link position
-  .#{$class-prefix}-close {
+  .close {
     position: relative;
     top: -2px;
     right: -21px;

@@ -7,10 +7,10 @@
   margin: $line-height-computed 0;
   border-radius: $border-radius-base;
 
-  > .#{$class-prefix}-html-li {
+  > li {
     display: inline; // Remove list-style and block-level defaults
-    > .#{$class-prefix}-html-a,
-    > .#{$class-prefix}-html-span {
+    > a,
+    > span {
       position: relative;
       float: left; // Collapse white-space
       padding: $padding-base-vertical $padding-base-horizontal;
@@ -22,22 +22,22 @@
       margin-left: -1px;
     }
     &:first-child {
-      > .#{$class-prefix}-html-a,
-      > .#{$class-prefix}-html-span {
+      > a,
+      > span {
         margin-left: 0;
         @include border-left-radius($border-radius-base);
       }
     }
     &:last-child {
-      > .#{$class-prefix}-html-a,
-      > .#{$class-prefix}-html-span {
+      > a,
+      > span {
         @include border-right-radius($border-radius-base);
       }
     }
   }
 
-  > .#{$class-prefix}-html-li > .#{$class-prefix}-html-a,
-  > .#{$class-prefix}-html-li > .#{$class-prefix}-html-span {
+  > li > a,
+  > li > span {
     &:hover,
     &:focus {
       z-index: 2;
@@ -47,8 +47,8 @@
     }
   }
 
-  > .#{$class-prefix}-active > .#{$class-prefix}-html-a,
-  > .#{$class-prefix}-active > .#{$class-prefix}-html-span {
+  > .active > a,
+  > .active > span {
     &,
     &:hover,
     &:focus {
@@ -60,13 +60,13 @@
     }
   }
 
-  > .#{$class-prefix}-disabled {
-    > .#{$class-prefix}-html-span,
-    > .#{$class-prefix}-html-span:hover,
-    > .#{$class-prefix}-html-span:focus,
-    > .#{$class-prefix}-html-a,
-    > .#{$class-prefix}-html-a:hover,
-    > .#{$class-prefix}-html-a:focus {
+  > .disabled {
+    > span,
+    > span:hover,
+    > span:focus,
+    > a,
+    > a:hover,
+    > a:focus {
       color: $pagination-disabled-color;
       background-color: $pagination-disabled-bg;
       border-color: $pagination-disabled-border;

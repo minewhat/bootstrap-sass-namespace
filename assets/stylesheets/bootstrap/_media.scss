@@ -27,12 +27,12 @@
 }
 
 .#{$class-prefix}-media-right,
-.#{$class-prefix}-media > .#{$class-prefix}-pull-right {
+.#{$class-prefix}-media > .pull-right {
   padding-left: 10px;
 }
 
 .#{$class-prefix}-media-left,
-.#{$class-prefix}-media > .#{$class-prefix}-pull-left {
+.#{$class-prefix}-media > .pull-left {
   padding-right: 10px;
 }
 

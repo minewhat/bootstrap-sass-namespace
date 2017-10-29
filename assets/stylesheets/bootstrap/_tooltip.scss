@@ -17,9 +17,9 @@
 
   &.#{$class-prefix}-in     { @include opacity($tooltip-opacity); }
   &.#{$class-prefix}-top    { margin-top:  -3px; padding: $tooltip-arrow-width 0; }
-  &.#{$class-prefix}-right  { margin-left:  3px; padding: 0 $tooltip-arrow-width; }
+  &.right  { margin-left:  3px; padding: 0 $tooltip-arrow-width; }
   &.#{$class-prefix}-bottom { margin-top:   3px; padding: $tooltip-arrow-width 0; }
-  &.#{$class-prefix}-left   { margin-left: -3px; padding: 0 $tooltip-arrow-width; }
+  &.left   { margin-left: -3px; padding: 0 $tooltip-arrow-width; }
 }
 
 // Wrapper for the tooltip content
@@ -63,14 +63,14 @@
     border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
     border-top-color: $tooltip-arrow-color;
   }
-  &.#{$class-prefix}-right .#{$class-prefix}-tooltip-arrow {
+  &.right .#{$class-prefix}-tooltip-arrow {
     top: 50%;
     left: 0;
     margin-top: -$tooltip-arrow-width;
     border-width: $tooltip-arrow-width $tooltip-arrow-width $tooltip-arrow-width 0;
     border-right-color: $tooltip-arrow-color;
   }
-  &.#{$class-prefix}-left .#{$class-prefix}-tooltip-arrow {
+  &.left .#{$class-prefix}-tooltip-arrow {
     top: 50%;
     right: 0;
     margin-top: -$tooltip-arrow-width;

@@ -19,8 +19,8 @@
     @include transition(.6s ease-in-out left);
 
     // Account for jankitude on images
-    > .#{$class-prefix}-html-img,
-    > .#{$class-prefix}-html-a > .#{$class-prefix}-html-img {
+    > img,
+    > a > img {
       @include img-responsive;
       line-height: 1;
     }
@@ -32,31 +32,31 @@
       @include perspective(1000px);
 
       &.#{$class-prefix}-next,
-      &.#{$class-prefix}-active.#{$class-prefix}-right {
+      &.active.right {
         @include translate3d(100%, 0, 0);
         left: 0;
       }
       &.#{$class-prefix}-prev,
-      &.#{$class-prefix}-active.#{$class-prefix}-left {
+      &.active.left {
         @include translate3d(-100%, 0, 0);
         left: 0;
       }
-      &.#{$class-prefix}-next.#{$class-prefix}-left,
-      &.#{$class-prefix}-prev.#{$class-prefix}-right,
-      &.#{$class-prefix}-active {
+      &.#{$class-prefix}-next.left,
+      &.#{$class-prefix}-prev.right,
+      &.active {
         @include translate3d(0, 0, 0);
         left: 0;
       }
     }
   }
 
-  > .#{$class-prefix}-active,
+  > .active,
   > .#{$class-prefix}-next,
   > .#{$class-prefix}-prev {
     display: block;
   }
 
-  > .#{$class-prefix}-active {
+  > .active {
     left: 0;
   }
 
@@ -73,15 +73,15 @@
   > .#{$class-prefix}-prev {
     left: -100%;
   }
-  > .#{$class-prefix}-next.#{$class-prefix}-left,
-  > .#{$class-prefix}-prev.#{$class-prefix}-right {
+  > .#{$class-prefix}-next.left,
+  > .#{$class-prefix}-prev.right {
     left: 0;
   }
 
-  > .#{$class-prefix}-active.#{$class-prefix}-left {
+  > .active.left {
     left: -100%;
   }
-  > .#{$class-prefix}-active.#{$class-prefix}-right {
+  > .active.right {
     left: 100%;
   }
 
@@ -106,10 +106,10 @@
   // animation if you trip this while in the middle of another animation.
 
   // Set gradients for backgrounds
-  &.#{$class-prefix}-left {
+  &.left {
     @include gradient-horizontal($start-color: rgba(0,0,0,.5), $end-color: rgba(0,0,0,.0001));
   }
-  &.#{$class-prefix}-right {
+  &.right {
     left: auto;
     right: 0;
     @include gradient-horizontal($start-color: rgba(0,0,0,.0001), $end-color: rgba(0,0,0,.5));
@@ -182,7 +182,7 @@
   list-style: none;
   text-align: center;
 
-  .#{$class-prefix}-html-li {
+  li {
     display: inline-block;
     width:  10px;
     height: 10px;
@@ -204,7 +204,7 @@
     background-color: #000 \9; // IE8
     background-color: rgba(0,0,0,0); // IE9
   }
-  .#{$class-prefix}-active {
+  .active {
     margin: 0;
     width:  12px;
     height: 12px;

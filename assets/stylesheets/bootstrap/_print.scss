@@ -15,54 +15,54 @@
         text-shadow: none !important;
     }
 
-    .#{$class-prefix}-html-a,
-    .#{$class-prefix}-html-a:visited {
+    a,
+    a:visited {
         text-decoration: underline;
     }
 
-    .#{$class-prefix}-html-a[href]:after {
+    a[href]:after {
         content: " (" attr(href) ")";
     }
 
-    .#{$class-prefix}-html-abbr[title]:after {
+    abbr[title]:after {
         content: " (" attr(title) ")";
     }
 
     // Don't show links that are fragment identifiers,
     // or use the `javascript:` pseudo protocol
-    .#{$class-prefix}-html-a[href^="#"]:after,
-    .#{$class-prefix}-html-a[href^="javascript:"]:after {
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
         content: "";
     }
 
-    .#{$class-prefix}-html-pre,
-    .#{$class-prefix}-html-blockquote {
+    pre,
+    blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
 
-    .#{$class-prefix}-html-thead {
+    thead {
         display: table-header-group; // h5bp.com/t
     }
 
-    .#{$class-prefix}-html-tr,
-    .#{$class-prefix}-html-img {
+    tr,
+    img {
         page-break-inside: avoid;
     }
 
-    .#{$class-prefix}-html-img {
+    img {
         max-width: 100% !important;
     }
 
-    .#{$class-prefix}-html-p,
-    .#{$class-prefix}-html-h2,
-    .#{$class-prefix}-html-h3 {
+    p,
+    h2,
+    h3 {
         orphans: 3;
         widows: 3;
     }
 
-    .#{$class-prefix}-html-h2,
-    .#{$class-prefix}-html-h3 {
+    h2,
+    h3 {
         page-break-after: avoid;
     }
 
@@ -85,14 +85,14 @@
     .#{$class-prefix}-table {
         border-collapse: collapse !important;
 
-        .#{$class-prefix}-html-td,
-        .#{$class-prefix}-html-th {
+        td,
+        th {
             background-color: #fff !important;
         }
     }
     .#{$class-prefix}-table-bordered {
-        .#{$class-prefix}-html-th,
-        .#{$class-prefix}-html-td {
+        th,
+        td {
             border: 1px solid #ddd !important;
         }
     }

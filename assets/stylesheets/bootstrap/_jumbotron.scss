@@ -10,18 +10,18 @@
   color: $jumbotron-color;
   background-color: $jumbotron-bg;
 
-  .#{$class-prefix}-html-h1,
+  h1,
   .#{$class-prefix}-h1 {
     color: $jumbotron-heading-color;
   }
 
-  .#{$class-prefix}-html-p {
+  p {
     margin-bottom: ($jumbotron-padding / 2);
     font-size: $jumbotron-font-size;
     font-weight: 200;
   }
 
-  > .#{$class-prefix}-html-hr {
+  > hr {
     border-top-color: darken($jumbotron-bg, 10%);
   }
 
@@ -46,7 +46,7 @@
       padding-right: ($jumbotron-padding * 2);
     }
 
-    .#{$class-prefix}-html-h1,
+    h1,
     .#{$class-prefix}-h1 {
       font-size: $jumbotron-heading-font-size;
     }

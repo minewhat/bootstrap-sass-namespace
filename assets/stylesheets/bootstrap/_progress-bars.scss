@@ -61,8 +61,8 @@
 //
 // `.progress.active .progress-bar` is deprecated as of v3.2.0 in favor of the
 // `.progress-bar.active` approach.
-.#{$class-prefix}-progress.#{$class-prefix}-active .#{$class-prefix}-progress-bar,
-.#{$class-prefix}-progress-bar.#{$class-prefix}-active {
+.#{$class-prefix}-progress.active .#{$class-prefix}-progress-bar,
+.#{$class-prefix}-progress-bar.active {
   @include animation(progress-bar-stripes 2s linear infinite);
 }
 

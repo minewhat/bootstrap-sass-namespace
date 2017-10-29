@@ -36,11 +36,11 @@
   font-size: ceil(($font-size-base * 1.125));
   color: inherit;
 
-  > .#{$class-prefix}-html-a,
-  > .#{$class-prefix}-html-small,
+  > a,
+  > small,
   > .#{$class-prefix}-small,
-  > .#{$class-prefix}-html-small > .#{$class-prefix}-html-a,
-  > .#{$class-prefix}-small > .#{$class-prefix}-html-a {
+  > small > a,
+  > .#{$class-prefix}-small > a {
     color: inherit;
   }
 }
@@ -112,7 +112,7 @@
   > .#{$class-prefix}-panel-collapse > .#{$class-prefix}-table {
     margin-bottom: 0;
 
-    .#{$class-prefix}-html-caption {
+    caption {
       padding-left: $panel-body-padding;
       padding-right: $panel-body-padding;
     }
@@ -122,18 +122,18 @@
   > .#{$class-prefix}-table-responsive:first-child > .#{$class-prefix}-table:first-child {
     @include border-top-radius(($panel-border-radius - 1));
 
-    > .#{$class-prefix}-html-thead:first-child,
-    > .#{$class-prefix}-html-tbody:first-child {
-      > .#{$class-prefix}-html-tr:first-child {
+    > thead:first-child,
+    > tbody:first-child {
+      > tr:first-child {
         border-top-left-radius: ($panel-border-radius - 1);
         border-top-right-radius: ($panel-border-radius - 1);
 
-        .#{$class-prefix}-html-td:first-child,
-        .#{$class-prefix}-html-th:first-child {
+        td:first-child,
+        th:first-child {
           border-top-left-radius: ($panel-border-radius - 1);
         }
-        .#{$class-prefix}-html-td:last-child,
-        .#{$class-prefix}-html-th:last-child {
+        td:last-child,
+        th:last-child {
           border-top-right-radius: ($panel-border-radius - 1);
         }
       }
@@ -144,18 +144,18 @@
   > .#{$class-prefix}-table-responsive:last-child > .#{$class-prefix}-table:last-child {
     @include border-bottom-radius(($panel-border-radius - 1));
 
-    > .#{$class-prefix}-html-tbody:last-child,
-    > .#{$class-prefix}-html-tfoot:last-child {
-      > .#{$class-prefix}-html-tr:last-child {
+    > tbody:last-child,
+    > tfoot:last-child {
+      > tr:last-child {
         border-bottom-left-radius: ($panel-border-radius - 1);
         border-bottom-right-radius: ($panel-border-radius - 1);
 
-        .#{$class-prefix}-html-td:first-child,
-        .#{$class-prefix}-html-th:first-child {
+        td:first-child,
+        th:first-child {
           border-bottom-left-radius: ($panel-border-radius - 1);
         }
-        .#{$class-prefix}-html-td:last-child,
-        .#{$class-prefix}-html-th:last-child {
+        td:last-child,
+        th:last-child {
           border-bottom-right-radius: ($panel-border-radius - 1);
         }
       }
@@ -167,41 +167,41 @@
   > .#{$class-prefix}-table-responsive + .#{$class-prefix}-panel-body {
     border-top: 1px solid $table-border-color;
   }
-  > .#{$class-prefix}-table > .#{$class-prefix}-html-tbody:first-child > .#{$class-prefix}-html-tr:first-child .#{$class-prefix}-html-th,
-  > .#{$class-prefix}-table > .#{$class-prefix}-html-tbody:first-child > .#{$class-prefix}-html-tr:first-child .#{$class-prefix}-html-td {
+  > .#{$class-prefix}-table > tbody:first-child > tr:first-child th,
+  > .#{$class-prefix}-table > tbody:first-child > tr:first-child td {
     border-top: 0;
   }
   > .#{$class-prefix}-table-bordered,
   > .#{$class-prefix}-table-responsive > .#{$class-prefix}-table-bordered {
     border: 0;
-    > .#{$class-prefix}-html-thead,
-    > .#{$class-prefix}-html-tbody,
-    > .#{$class-prefix}-html-tfoot {
-      > .#{$class-prefix}-html-tr {
-        > .#{$class-prefix}-html-th:first-child,
-        > .#{$class-prefix}-html-td:first-child {
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th:first-child,
+        > td:first-child {
           border-left: 0;
         }
-        > .#{$class-prefix}-html-th:last-child,
-        > .#{$class-prefix}-html-td:last-child {
+        > th:last-child,
+        > td:last-child {
           border-right: 0;
         }
       }
     }
-    > .#{$class-prefix}-html-thead,
-    > .#{$class-prefix}-html-tbody {
-      > .#{$class-prefix}-html-tr:first-child {
-        > .#{$class-prefix}-html-td,
-        > .#{$class-prefix}-html-th {
+    > thead,
+    > tbody {
+      > tr:first-child {
+        > td,
+        > th {
           border-bottom: 0;
         }
       }
     }
-    > .#{$class-prefix}-html-tbody,
-    > .#{$class-prefix}-html-tfoot {
-      > .#{$class-prefix}-html-tr:last-child {
-        > .#{$class-prefix}-html-td,
-        > .#{$class-prefix}-html-th {
+    > tbody,
+    > tfoot {
+      > tr:last-child {
+        > td,
+        > th {
           border-bottom: 0;
         }
       }

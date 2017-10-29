@@ -25,9 +25,9 @@
 
   // Offset the popover to account for the popover arrow
   &.#{$class-prefix}-top     { margin-top: -$popover-arrow-width; }
-  &.#{$class-prefix}-right   { margin-left: $popover-arrow-width; }
+  &.right   { margin-left: $popover-arrow-width; }
   &.#{$class-prefix}-bottom  { margin-top: $popover-arrow-width; }
-  &.#{$class-prefix}-left    { margin-left: -$popover-arrow-width; }
+  &.left    { margin-left: -$popover-arrow-width; }
 }
 
 .#{$class-prefix}-popover-title {
@@ -82,7 +82,7 @@
       border-top-color: $popover-arrow-color;
     }
   }
-  &.#{$class-prefix}-right > .#{$class-prefix}-arrow {
+  &.right > .#{$class-prefix}-arrow {
     top: 50%;
     left: -$popover-arrow-outer-width;
     margin-top: -$popover-arrow-outer-width;
@@ -113,7 +113,7 @@
     }
   }
 
-  &.#{$class-prefix}-left > .#{$class-prefix}-arrow {
+  &.left > .#{$class-prefix}-arrow {
     top: 50%;
     right: -$popover-arrow-outer-width;
     margin-top: -$popover-arrow-outer-width;
