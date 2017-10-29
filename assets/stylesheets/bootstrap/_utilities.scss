@@ -9,7 +9,7 @@
 .clearfix {
   @include clearfix;
 }
-.#{$class-prefix}-center-block {
+.center-block {
   @include center-block;
 }
 .pull-right {
@@ -24,16 +24,16 @@
 // -------------------------
 
 // Note: Deprecated .hide in favor of .#{$class-prefix}-hidden or .sr-only (as appropriate) in v3.0.1
-.#{$class-prefix}-hide {
+.hide {
   display: none !important;
 }
-.#{$class-prefix}-show {
+.show {
   display: block !important;
 }
-.#{$class-prefix}-invisible {
+.invisible {
   visibility: hidden;
 }
-.#{$class-prefix}-text-hide {
+.text-hide {
   @include text-hide;
 }
 

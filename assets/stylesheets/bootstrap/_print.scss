@@ -73,8 +73,8 @@
         display: none;
     }
     .#{$class-prefix}-btn,
-    .#{$class-prefix}-dropup > .#{$class-prefix}-btn {
-        > .#{$class-prefix}-caret {
+    .dropup > .#{$class-prefix}-btn {
+        > .caret {
             border-top-color: #000 !important;
         }
     }

@@ -7,49 +7,49 @@
 // -------------------------
 
 h1, h2, h3, h4, h5, h6,
-.#{$class-prefix}-h1, .#{$class-prefix}-h2, .#{$class-prefix}-h3, .#{$class-prefix}-h4, .#{$class-prefix}-h5, .#{$class-prefix}-h6 {
+.h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   color: $headings-color;
 
   small,
-  .#{$class-prefix}-small {
+  .small {
     font-weight: normal;
     line-height: 1;
     color: $headings-small-color;
   }
 }
 
-h1, .#{$class-prefix}-h1,
-h2, .#{$class-prefix}-h2,
-h3, .#{$class-prefix}-h3 {
+h1, .h1,
+h2, .h2,
+h3, .h3 {
   margin-top: $line-height-computed;
   margin-bottom: ($line-height-computed / 2);
 
   small,
-  .#{$class-prefix}-small {
+  .small {
     font-size: 65%;
   }
 }
-h4, .#{$class-prefix}-h4,
-h5, .#{$class-prefix}-h5,
-h6, .#{$class-prefix}-h6 {
+h4, .h4,
+h5, .h5,
+h6, .h6 {
   margin-top: ($line-height-computed / 2);
   margin-bottom: ($line-height-computed / 2);
 
   small,
-  .#{$class-prefix}-small {
+  .small {
     font-size: 75%;
   }
 }
 
-h1, .#{$class-prefix}-h1 { font-size: $font-size-h1; }
-h2, .#{$class-prefix}-h2 { font-size: $font-size-h2; }
-h3, .#{$class-prefix}-h3 { font-size: $font-size-h3; }
-h4, .#{$class-prefix}-h4 { font-size: $font-size-h4; }
-h5, .#{$class-prefix}-h5 { font-size: $font-size-h5; }
-h6, .#{$class-prefix}-h6 { font-size: $font-size-h6; }
+h1, .h1 { font-size: $font-size-h1; }
+h2, .h2 { font-size: $font-size-h2; }
+h3, .h3 { font-size: $font-size-h3; }
+h4, .h4 { font-size: $font-size-h4; }
+h5, .h5 { font-size: $font-size-h5; }
+h6, .h6 { font-size: $font-size-h6; }
 
 
 // Body text
@@ -59,7 +59,7 @@ p {
   margin: 0 0 ($line-height-computed / 2);
 }
 
-.#{$class-prefix}-lead {
+.lead {
   margin-bottom: $line-height-computed;
   font-size: floor(($font-size-base * 1.15));
   font-weight: 300;
@@ -76,30 +76,30 @@ p {
 
 // Ex: (12px small font / 14px base font) * 100% = about 85%
 small,
-.#{$class-prefix}-small {
+.small {
   font-size: floor((100% * $font-size-small / $font-size-base));
 }
 
 mark,
-.#{$class-prefix}-mark {
+.mark {
   background-color: $state-warning-bg;
   padding: .2em;
 }
 
 // Alignment
-.#{$class-prefix}-text-left           { text-align: left; }
-.#{$class-prefix}-text-right          { text-align: right; }
-.#{$class-prefix}-text-center         { text-align: center; }
-.#{$class-prefix}-text-justify        { text-align: justify; }
-.#{$class-prefix}-text-nowrap         { white-space: nowrap; }
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
 
 // Transformation
-.#{$class-prefix}-text-lowercase      { text-transform: lowercase; }
-.#{$class-prefix}-text-uppercase      { text-transform: uppercase; }
-.#{$class-prefix}-text-capitalize     { text-transform: capitalize; }
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
 
 // Contextual colors
-.#{$class-prefix}-text-muted {
+.text-muted {
   color: $text-muted;
 }
 
@@ -116,7 +116,7 @@ mark,
 // Contextual backgrounds
 // For now we'll leave these alongside the text classes until v4 when we can
 // safely shift things around (per SemVer rules).
-.#{$class-prefix}-bg-primary {
+.bg-primary {
   // Given the contrast here, this is the only class to have its color inverted
   // automatically.
   color: #fff;
@@ -135,7 +135,7 @@ mark,
 // Page header
 // -------------------------
 
-.#{$class-prefix}-page-header {
+.page-header {
   padding-bottom: (($line-height-computed / 2) - 1);
   margin: ($line-height-computed * 2) 0 $line-height-computed;
   border-bottom: 1px solid $page-header-border-color;
@@ -164,13 +164,13 @@ ol {
   list-style: none;
 }
 // [converter] extracted as `@mixin list-unstyled` for libsass compatibility
-.#{$class-prefix}-list-unstyled {
+.list-unstyled {
   @include list-unstyled;
 }
 
 
 // Inline turns list items into inline-block
-.#{$class-prefix}-list-inline {
+.list-inline {
   @include list-unstyled;
   margin-left: -5px;
 
@@ -202,7 +202,7 @@ dd {
 // Defaults to being stacked without any of the below styles applied, until the
 // grid breakpoint is reached (default of ~768px).
 
-.#{$class-prefix}-dl-horizontal {
+.dl-horizontal {
   dd {
     @include clearfix; // Clear the floated `dt` if an empty `dd` is present
   }
@@ -232,9 +232,9 @@ abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted $abbr-border-color;
 }
-.#{$class-prefix}-initialism {
+.initialism {
   font-size: 90%;
-  @extend .#{$class-prefix}-text-uppercase;
+  @extend .text-uppercase;
 }
 
 // Blockquotes
@@ -256,7 +256,7 @@ blockquote {
   // Context: https://github.com/twbs/bootstrap/issues/11660
   footer,
   small,
-  .#{$class-prefix}-small {
+  .small {
     display: block;
     font-size: 80%; // back to default font-size
     line-height: $line-height-base;
@@ -271,7 +271,7 @@ blockquote {
 // Opposite alignment of blockquote
 //
 // Heads up: `blockquote.pull-right` has been deprecated as of v3.1.0.
-.#{$class-prefix}-blockquote-reverse,
+.blockquote-reverse,
 blockquote.pull-right {
   padding-right: 15px;
   padding-left: 0;
@@ -282,7 +282,7 @@ blockquote.pull-right {
   // Account for citation
   footer,
   small,
-  .#{$class-prefix}-small {
+  .small {
     &:before { content: ''; }
     &:after {
       content: '\00A0 \2014'; // nbsp, em dash

@@ -65,7 +65,7 @@
     border-top: 0;
     box-shadow: none;
 
-    &.#{$class-prefix}-collapse {
+    &.collapse {
       display: block !important;
       height: auto !important;
       padding-bottom: 0; // Override default setting
@@ -208,13 +208,13 @@
   }
 
   // Bars
-  .#{$class-prefix}-icon-bar {
+  .icon-bar {
     display: block;
     width: 22px;
     height: 2px;
     border-radius: 1px;
   }
-  .#{$class-prefix}-icon-bar + .#{$class-prefix}-icon-bar {
+  .icon-bar + .icon-bar {
     margin-top: 4px;
   }
 
@@ -445,7 +445,7 @@
     &:focus {
       background-color: $navbar-default-toggle-hover-bg;
     }
-    .#{$class-prefix}-icon-bar {
+    .icon-bar {
       background-color: $navbar-default-toggle-icon-bar-bg;
     }
   }
@@ -580,7 +580,7 @@
     &:focus {
       background-color: $navbar-inverse-toggle-hover-bg;
     }
-    .#{$class-prefix}-icon-bar {
+    .icon-bar {
       background-color: $navbar-inverse-toggle-icon-bar-bg;
     }
   }
@@ -607,7 +607,7 @@
         > .#{$class-prefix}-dropdown-header {
           border-color: $navbar-inverse-border;
         }
-        .#{$class-prefix}-divider {
+        .divider {
           background-color: $navbar-inverse-border;
         }
         > li > a {

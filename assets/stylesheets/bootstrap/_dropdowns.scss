@@ -4,7 +4,7 @@
 
 
 // Dropdown arrow/caret
-.#{$class-prefix}-caret {
+.caret {
   display: inline-block;
   width: 0;
   height: 0;
@@ -57,7 +57,7 @@
   }
 
   // Dividers (basically an hr) within the dropdown
-  .#{$class-prefix}-divider {
+  .divider {
     @include nav-divider($dropdown-divider-bg);
   }
 
@@ -183,7 +183,7 @@
 .dropup,
 .#{$class-prefix}-navbar-fixed-bottom .#{$class-prefix}-dropdown {
   // Reverse the caret
-  .#{$class-prefix}-caret {
+  .caret {
     border-top: 0;
     border-bottom: $caret-width-base dashed;
     border-bottom: $caret-width-base solid \9; // IE8

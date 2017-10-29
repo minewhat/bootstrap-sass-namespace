@@ -125,28 +125,28 @@
   }
 
   // Toggles
-  .#{$class-prefix}-icon-prev,
-  .#{$class-prefix}-icon-next,
-  .#{$class-prefix}-glyphicon-chevron-left,
-  .#{$class-prefix}-glyphicon-chevron-right {
+  .icon-prev,
+  .icon-next,
+  .glyphicon-chevron-left,
+  .glyphicon-chevron-right {
     position: absolute;
     top: 50%;
     margin-top: -10px;
     z-index: 5;
     display: inline-block;
   }
-  .#{$class-prefix}-icon-prev,
-  .#{$class-prefix}-glyphicon-chevron-left {
+  .icon-prev,
+  .glyphicon-chevron-left {
     left: 50%;
     margin-left: -10px;
   }
-  .#{$class-prefix}-icon-next,
-  .#{$class-prefix}-glyphicon-chevron-right {
+  .icon-next,
+  .glyphicon-chevron-right {
     right: 50%;
     margin-right: -10px;
   }
-  .#{$class-prefix}-icon-prev,
-  .#{$class-prefix}-icon-next {
+  .icon-prev,
+  .icon-next {
     width:  20px;
     height: 20px;
     line-height: 1;
@@ -154,12 +154,12 @@
   }
 
 
-  .#{$class-prefix}-icon-prev {
+  .icon-prev {
     &:before {
       content: '\2039';// SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
     }
   }
-  .#{$class-prefix}-icon-next {
+  .icon-next {
     &:before {
       content: '\203a';// SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
     }
@@ -237,21 +237,21 @@
 
   // Scale up the controls a smidge
   .#{$class-prefix}-carousel-control {
-    .#{$class-prefix}-glyphicon-chevron-left,
-    .#{$class-prefix}-glyphicon-chevron-right,
-    .#{$class-prefix}-icon-prev,
-    .#{$class-prefix}-icon-next {
+    .glyphicon-chevron-left,
+    .glyphicon-chevron-right,
+    .icon-prev,
+    .icon-next {
       width: ($carousel-control-font-size * 1.5);
       height: ($carousel-control-font-size * 1.5);
       margin-top: ($carousel-control-font-size / -2);
       font-size: ($carousel-control-font-size * 1.5);
     }
-    .#{$class-prefix}-glyphicon-chevron-left,
-    .#{$class-prefix}-icon-prev {
+    .glyphicon-chevron-left,
+    .icon-prev {
       margin-left: ($carousel-control-font-size / -2);
     }
-    .#{$class-prefix}-glyphicon-chevron-right,
-    .#{$class-prefix}-icon-next {
+    .glyphicon-chevron-right,
+    .icon-next {
       margin-right: ($carousel-control-font-size / -2);
     }
   }

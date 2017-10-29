@@ -124,16 +124,16 @@
 
 
 // Reposition the caret
-.#{$class-prefix}-btn .#{$class-prefix}-caret {
+.#{$class-prefix}-btn .caret {
   margin-left: 0;
 }
 // Carets in other button sizes
-.#{$class-prefix}-btn-lg .#{$class-prefix}-caret {
+.#{$class-prefix}-btn-lg .caret {
   border-width: $caret-width-large $caret-width-large 0;
   border-bottom-width: 0;
 }
 // Upside down carets for .dropup
-.#{$class-prefix}-dropup .#{$class-prefix}-btn-lg .#{$class-prefix}-caret {
+.dropup .#{$class-prefix}-btn-lg .caret {
   border-width: 0 $caret-width-large $caret-width-large;
 }
 
